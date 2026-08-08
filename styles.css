@@ -1,71 +1,70 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    text-decoration: none;
-    border: none;
-    list-style: none;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  border: none;
+  list-style: none;
 }
 
-/*/* Fonts: 
+/* Fonts:
 font-family: "Montserrat", sans-serif;
 font-family: "Abril Fatface", serif;
-font-family: "Viaoda Libre", serif;*/
-
+font-family: "Playfair Display", serif;
+*/
 
 /*--------------------------------------------------------------
 # Font & Color Variables
 --------------------------------------------------------------*/
-/* Fonts */
 :root {
   --Main-text-font: "Montserrat", sans-serif;
   --heading-font: "Abril Fatface", serif;
   --animation-text-font: "Playfair Display", serif;
-  }
 
-/* Global Colors  */
-:root { 
-  --background-color-white: #ffffff; 
+  --background-color-white: #ffffff;
   --background-color-black: #000000;
   --accent-color: linear-gradient(90deg, #ff3d7f, #b026ff);
-  --second-accent-color:#ff73cc;
-  --text-color-white: #ffffff; 
-  --text-color-black: #000000; 
-  
-}
+  --second-accent-color: #ff73cc;
+  --text-color-white: #ffffff;
+  --text-color-black: #000000;
 
+  /* Hauteur approx. du header sticky : sert à décaler les ancres de scroll */
+  --header-height: 80px;
+}
 
 /*--------------------------------------------------------------
 # General Styling & Shared Classes
 --------------------------------------------------------------*/
 html {
   overflow-x: hidden;
-   }
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);
+}
 
-.hero.section {
-  padding-top: auto;
+/* Empêche toute image/svg de provoquer un scroll horizontal */
+img,
+svg {
+  max-width: 100%;
+  height: auto;
 }
 
 .main h1 {
-  font-family:"Montserrat", sans-serif;
+  font-family: var(--Main-text-font);
   color: var(--text-color-black);
   font-weight: 900;
-  
 }
-
 
 p {
-  text-align:justify;
-  font-family: "Montserrat", sans-serif;
+  text-align: justify;
+  font-family: var(--Main-text-font);
 }
-
 
 /*--------------------------------------------------------------
 # Global Header
 --------------------------------------------------------------*/
 .header {
   background-color: var(--background-color-black);
-  font-family:"Montserrat", sans-serif; 
+  font-family: var(--Main-text-font);
   font-weight: 700;
   z-index: 997;
 }
@@ -81,24 +80,24 @@ p {
   left: 0;
   width: 0;
   height: 2px;
-  background-color:var(--background-color-white);
+  background-color: var(--background-color-white);
   transition: width 0.3s ease;
 }
 
 .nav-link:hover::after {
   width: 50%;
 }
+
 .navbar-brand {
-transition-duration: .5s;
+  transition-duration: .5s;
 }
 
 .navbar-brand:hover {
-transform: scale(1.05);
+  transform: scale(1.05);
 }
 
-
 .navbar-toggler {
-  border-color: rgba(255, 255, 255, 0.5); 
+  border-color: rgba(255, 255, 255, 0.5);
 }
 
 .navbar-toggler-icon {
@@ -107,49 +106,46 @@ transform: scale(1.05);
 
 /*--------------------------------------------------------------
 # Global Header on Scroll
--------------------------------------------------------------*/
+--------------------------------------------------------------*/
 .scrolled .header {
-background-color: rgba(7, 7, 8, 0.8);
+  background-color: rgba(7, 7, 8, 0.8);
 }
-
 
 /*--------------------------------------------------------------
 # Hero Section
 --------------------------------------------------------------*/
-
 .autoWriting span {
-    font-family: var(--animation-text-font);
-    color:   #b026ff;
-     font-size: 3.5rem;
-     font-weight: 700;
+  font-family: var(--animation-text-font);
+  color: #b026ff;
+  font-size: 3.5rem;
+  font-weight: 700;
 }
+
 .cursor {
-    display: inline-block;
-    width: 0.3rem;
-    height: 2.5rem;
-    background-color: transparent;
-    animation: blink 0.6s steps(2, start) infinite;
+  display: inline-block;
+  width: 0.3rem;
+  height: 2.5rem;
+  background-color: transparent;
+  animation: blink 0.6s steps(2, start) infinite;
 }
 
 @keyframes blink {
-    50% {
-        opacity: 0;
-    }
+  50% {
+    opacity: 0;
+  }
 }
 
-.btn-dark{
-    background-color:var(--background-color-black) !important;
-    box-shadow:0 8px 20px rgba(0,0,0,.35);
-    transition-duration: 0.5s;
-    }
-
-.btn-dark:hover{
-    background-color:#111 !important;
-    border-color:#666 !important;
-    transform: scale(1.01);
+.btn-dark {
+  background-color: var(--background-color-black) !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, .35);
+  transition-duration: 0.5s;
 }
 
-
+.btn-dark:hover {
+  background-color: #111 !important;
+  border-color: #666 !important;
+  transform: scale(1.01);
+}
 
 .cta-banner {
   background: var(--background-color-black);
@@ -160,9 +156,10 @@ background-color: rgba(7, 7, 8, 0.8);
   justify-content: center;
   gap: 40px;
   border: 1px solid color-mix(in srgb, var(--accent-color), transparent 80%);
+  transition-duration: .5s;
 }
 
- .cta-banner .cta-content h3 {
+.cta-banner .cta-content h3 {
   font-size: 28px;
   font-weight: 700;
   color: var(--text-color-white);
@@ -175,285 +172,162 @@ background-color: rgba(7, 7, 8, 0.8);
   margin: 0;
 }
 
-
-.cta-banner{
-  transition-duration: .5s;
-}
-
-
 .cta-banner:hover {
   background: color-mix(in srgb, var(--second-accent-color), #000 15%);
   transform: translateY(-3px);
   box-shadow: 0 12px 35px color-mix(in srgb, var(--second-accent-color), transparent 50%);
 }
 
-
-/*------------------------------------------------------
+/*--------------------------------------------------------------
 # Skills Section
 --------------------------------------------------------------*/
-
 .skills {
-   background-color: var(--background-color-black); 
-   color: var(--text-color-white); 
-   padding-top: 7rem;
-  padding-bottom: 7rem; 
-  } 
+  background-color: var(--background-color-black);
+  color: var(--text-color-white);
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+}
 
- .skills_title 
- { 
-  text-align: center; 
-} 
- .skills_title h2  { 
-  font-family:var(--Main-text-font); 
-  color: var(--text-color-white); 
-  font-weight: 700; 
-} 
- .skills_title p { 
-  font-family: var(--Main-text-font); 
-  text-align:center;
+.skills_title {
+  text-align: center;
+}
 
-} 
+.skills_title h2 {
+  font-family: var(--Main-text-font);
+  color: var(--text-color-white);
+  font-weight: 700;
+}
 
+.skills_title p {
+  font-family: var(--Main-text-font);
+  text-align: center;
+}
 
-/* =======================================================
-   SKILLS CARDS
-======================================================= */
-
-.skills_item{
-
-    position:relative;
-
-    display:flex;
-
-    flex-direction:column;
-
-    width:100%;
-
-    height:100%;
-
-    padding:25px 25px 15px;
-
-    background:var(--background-color-white);
-
-    border-radius:22px;
-
-    overflow:hidden;
-
+/* Cartes de compétences */
+.skills_item {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  height: 100%;
+  padding: 25px 25px 15px;
+  background: var(--background-color-white);
+  border-radius: 22px;
+  overflow: hidden;
   box-shadow: 5px 5px 5px 5px color-mix(in srgb, var(--background-color-white), transparent 90%);
-    transition:.35s;
-
+  transition: .35s;
 }
 
-.skills_item::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:0;
-
-    left:0;
-
-    width:100%;
-
-    height:4px;
-
-    background:linear-gradient(
-        90deg,
-        var(--second-accent-color),
-        color-mix(in srgb,var(--second-accent-color),transparent 40%)
-    );
-
-    transform:scaleX(0);
-
-    transform-origin:left;
-
-    transition:.35s;
-
+.skills_item::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, var(--second-accent-color), color-mix(in srgb, var(--second-accent-color), transparent 40%));
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: .35s;
 }
 
-.skills_item:hover{
-
-    transform:translateY(-10px);
-
-    box-shadow:0 25px 60px rgba(0,0,0,.15);
-
+.skills_item:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, .15);
 }
 
-.skills_item:hover::before{
-
-    transform:scaleX(1);
-
+.skills_item:hover::before {
+  transform: scaleX(1);
 }
 
-/* -------------------- */
-
-.skills_content{
-
-    display:flex;
-
-    flex-direction:column;
-
-    flex:1;
-
+.skills_content {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
 }
 
-/* -------------------- */
-
-.skills_icon{
-
-    margin-bottom:10px;
-
+.skills_icon {
+  margin-bottom: 10px;
 }
 
-.skills_icon i{
-
-    width:64px;
-
-    height:64px;
-
-    display:flex;
-
-    align-items:center;
-
-    justify-content:center;
-
-    font-size:30px;
-
-    color:#fff;
-
-    border-radius:18px;
-
-    background:linear-gradient(
-        135deg,
-        var(--second-accent-color),
-        color-mix(in srgb,var(--second-accent-color),transparent 20%)
-    );
-
-    box-shadow:0 15px 30px rgba(255,80,180,.25);
-
-    transition:.35s;
-
+.skills_icon i {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 30px;
+  color: #fff;
+  border-radius: 18px;
+  background: linear-gradient(135deg, var(--second-accent-color), color-mix(in srgb, var(--second-accent-color), transparent 20%));
+  box-shadow: 0 15px 30px rgba(255, 80, 180, .25);
+  transition: .35s;
 }
 
-.skills_item:hover .skills_icon i{
-
-    transform:rotate(5deg) scale(1.08);
-
+.skills_item:hover .skills_icon i {
+  transform: rotate(5deg) scale(1.08);
 }
 
-/* -------------------- */
-
-.skills_content h4{
-
-    display:flex;
-
-    align-items:flex-end;
-
-    min-height:50px;
-
-    margin-bottom:15px;
-    margin-top: 0;
-
-    font-size:1.5rem;
-
-    font-weight:700;
-
-    text-transform:uppercase;
-
-   text-align: center;
-   justify-content: center;
-
-    color:var(--text-color-black);
-
+.skills_content h4 {
+  display: flex;
+  align-items: flex-end;
+  min-height: 50px;
+  margin-bottom: 15px;
+  margin-top: 0;
+  font-size: 1.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-align: center;
+  justify-content: center;
+  color: var(--text-color-black);
 }
 
-/* -------------------- */
-
-.skills_content p{
-
-    flex:1;
-    text-align:start;
-    margin-bottom:30px;
-
-    font-size:16px;
-
-
-    color:color-mix(in srgb,var(--text-color-black),transparent 28%);
-
+.skills_content p {
+  flex: 1;
+  text-align: start;
+  margin-bottom: 30px;
+  font-size: 16px;
+  color: color-mix(in srgb, var(--text-color-black), transparent 28%);
 }
 
-/* -------------------- */
-
-.skills_tags{
-
-    display:flex;
-
-    flex-wrap:wrap;
-
-    gap:10px;
-
-    margin-top:auto;
-     margin-bottom:0;
-
-    min-height:55px;
-
-    align-content:flex-start;
-
+.skills_tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: auto;
+  margin-bottom: 0;
+  min-height: 55px;
+  align-content: flex-start;
 }
 
-.skills_tags .tag{
-
-    padding:8px 14px;
-
-    border-radius:30px;
-
-    font-size:12px;
-
-    font-weight:600;
-
-
-    background:rgba(255,80,180,.08);
-
-    color:var(--second-accent-color);
-
-    transition:.3s;
-
+.skills_tags .tag {
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255, 80, 180, .08);
+  color: var(--second-accent-color);
+  transition: .3s;
 }
 
-.skills_item:hover .tag{
-
-    background:var(--second-accent-color);
-
-    color:white;
-
+.skills_item:hover .tag {
+  background: var(--second-accent-color);
+  color: white;
 }
 
-/* -------------------- */
-
-.skills_number{
-
-    position:absolute;
-
-    top:20px;
-
-    right:25px;
-
-    font-size:72px;
-
-    font-weight:800;
-
-    color:rgba(236, 9, 138, 0.089);
-
-    line-height:1;
-
-    user-select:none;
-
+.skills_number {
+  position: absolute;
+  top: 20px;
+  right: 25px;
+  font-size: 72px;
+  font-weight: 800;
+  color: rgba(236, 9, 138, 0.089);
+  line-height: 1;
+  user-select: none;
 }
 
-
-/*--------------------------------------------------------
-# Portfolio section
+/*--------------------------------------------------------------
+# Portfolio Section (Graphisme)
 --------------------------------------------------------------*/
 .portfolio_title {
   font-family: var(--Main-text-font);
@@ -461,21 +335,21 @@ background-color: rgba(7, 7, 8, 0.8);
   font-weight: 700;
 }
 
-.competences-cont  {
+.competences-cont {
   font-family: var(--Main-text-font);
   color: var(--text-color-black);
-  
 }
-.graph{
-    font-family: var(--Main-text-font);
+
+.graph {
+  font-family: var(--Main-text-font);
   color: var(--text-color-black);
   font-weight: 700;
   font-size: 3rem;
 }
 
- .brand {
+.brand {
   color: var(--text-color-black);
-  font-family: var(--heading-font) ;
+  font-family: var(--heading-font);
   font-weight: 800;
   font-size: 4rem;
   letter-spacing: -2px;
@@ -485,7 +359,6 @@ background-color: rgba(7, 7, 8, 0.8);
 /*--------------------------------------------------------------
 # Projets Web Section
 --------------------------------------------------------------*/
-
 .projets {
   background-color: var(--background-color-white);
   font-family: var(--Main-text-font);
@@ -500,29 +373,18 @@ background-color: rgba(7, 7, 8, 0.8);
 .projets p {
   font-family: var(--Main-text-font);
   color: var(--text-color-black);
-  
 }
 
 .project_card {
-
   position: relative;
-
   display: flex;
-
   flex-direction: column;
-
   background: var(--background-color-white);
-
   border-radius: 22px;
-
   overflow: hidden;
-
   box-shadow: 0 15px 40px rgba(0, 0, 0, .08);
-
   border: 1px solid rgba(0, 0, 0, .05);
-
   transition: .35s;
-
 }
 
 .project_card:hover {
@@ -576,12 +438,26 @@ background-color: rgba(7, 7, 8, 0.8);
   color: color-mix(in srgb, var(--text-color-black), transparent 28%);
 }
 
-.project_tags  {
+.project_tags {
   display: flex;
   flex-wrap: wrap;
   gap: 10px;
   margin: 10px 0 20px;
+}
 
+.project_tags .tag {
+  padding: 8px 14px;
+  border-radius: 30px;
+  font-size: 12px;
+  font-weight: 600;
+  background: rgba(255, 80, 180, .08);
+  color: var(--second-accent-color);
+  transition: .3s;
+}
+
+.project_tags:hover .tag {
+  background: var(--second-accent-color);
+  color: white;
 }
 
 .project_links {
@@ -605,39 +481,11 @@ background-color: rgba(7, 7, 8, 0.8);
   color: var(--second-accent-color);
 }
 
-.project_tags .tag{
-
-    padding:8px 14px;
-
-    border-radius:30px;
-
-    font-size:12px;
-
-    font-weight:600;
-
-
-    background:rgba(255,80,180,.08);
-
-    color:var(--second-accent-color);
-
-    transition:.3s;
-
-}
-
-.project_tags:hover .tag{
-
-    background:var(--second-accent-color);
-
-    color:white;
-
-}
-
 /*--------------------------------------------------------------
 # Contact Section
 --------------------------------------------------------------*/
-
 .contact {
-  background-color:  #111;
+  background-color: #111;
   color: var(--text-color-white);
   font-family: var(--Main-text-font);
 }
@@ -648,7 +496,7 @@ background-color: rgba(7, 7, 8, 0.8);
 }
 
 .contact h2,
-.contact>.container>.row>div>p {
+.contact > .container > .row > div > p {
   color: var(--text-color-white);
 }
 
@@ -702,18 +550,13 @@ background-color: rgba(7, 7, 8, 0.8);
   gap: 15px;
   padding: 18px 20px;
   border-radius: 16px;
-  background: var();
+  background: transparent;
   text-decoration: none;
   transition: .3s;
 }
 
-a.contact_item:hover {
-  background: rgba(255, 80, 180, .08);
-  transform: translateY(-3px);
-}
-
 .contact_item:hover {
-   background: rgba(255, 80, 180, .08);
+  background: rgba(255, 80, 180, .08);
   transform: translateY(-3px);
 }
 
@@ -785,31 +628,15 @@ a.contact_item:hover {
   color: var(--second-accent-color) !important;
 }
 
-/* Pantallas pequeñas: 1 sola columna */
-@media (max-width: 575.98px) {
-  .contact_grid {
-    grid-template-columns: 1fr;
-    gap: 1rem;
-  }
-
-  .contact_text{
-    text-align:center;
-  }
-}
-
 /*--------------------------------------------------------------
 # Global Footer
 --------------------------------------------------------------*/
-
 .footer {
   background-color: var(--background-color-white);
   min-height: 75px;
-
   width: 100%;
-  
   display: grid;
   place-items: center;
-
   text-align: center;
 }
 
@@ -820,22 +647,12 @@ a.contact_item:hover {
   padding: 0 15px;
 }
 
-.footer .row {
-  width: 100%;
-  margin: 0;
-  justify-content: center;
-}
-
-.footer .col-12 {
-  width: 100%;
-  text-align: center !important;
-}
-
 .footer p {
   margin: 0;
   text-align: center !important;
 }
-/*--------------------------------------------
+
+/*--------------------------------------------------------------
 # Scroll Top Button
 --------------------------------------------------------------*/
 .scroll-top {
@@ -851,20 +668,19 @@ a.contact_item:hover {
   height: 44px;
   border-radius: 50px;
   transition: all 0.4s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .scroll-top i {
   font-size: 24px;
-  color: var(--main-color-white);
+  color: var(--text-color-white);
   line-height: 0;
 }
 
 .scroll-top:hover {
-  background-color: var(--main-color-white);
-
-}
-.scroll-top i:hover {
-    color: var(--second-text-color);
+  background-color: var(--second-accent-color);
 }
 
 .scroll-top.active {
@@ -872,5 +688,4 @@ a.contact_item:hover {
   opacity: 1;
   bottom: 15px;
 }
-
 

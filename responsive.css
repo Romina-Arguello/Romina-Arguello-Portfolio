@@ -1,29 +1,238 @@
-@media (max-width: 768px) {
-   .autoWriting span {
-    font-size: 3.5rem;
-   }
+/*--------------------------------------------------------------
+# Responsive
+# Ordre : du plus grand écran (tablette) au plus petit (mobile)
+--------------------------------------------------------------*/
 
-   p {
-      justify-content:center;
-      text-align:justify;
-   }
+/*==============================
+  ≤ 991.98px — Tablettes
+==============================*/
+@media (max-width: 991.98px) {
+  .body {
+   height: auto;
+  }
+  .skills {
+    padding-top: 4rem;
+    padding-bottom: 4rem;
+  }
+
+  #skills.skills_section,
+  #portfolio.portfolio,
+  #projets.projets {
+    margin-top: 2rem !important;
+  }
+
+  .brand {
+    font-size: 3rem;
+  }
+
+  .graph {
+    font-size: 2.2rem;
+  }
 }
 
+/*==============================
+  ≤ 767.98px — Mobile large / petites tablettes
+==============================*/
+@media (max-width: 767.98px) {
+  .body {
+   height: auto;
+  }
+  .hero.section,
+  .portfolio,
+  .projets,
+  .contact {
+    padding-top: 2.5rem !important;
+    padding-bottom: 2.5rem !important;
+  }
 
+  .skills {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+  }
 
+  #skills.skills_section,
+  #portfolio.portfolio,
+  #projets.projets {
+    margin-top: 1.5rem !important;
+  }
 
+  .container.mb-4,
+  .container.mb-5 {
+    margin-bottom: 1.5rem !important;
+  }
+
+  .main h1 {
+    font-size: 1.7rem;
+  }
+
+  .autoWriting span {
+    font-size: 2.4rem;
+  }
+
+  .cursor {
+    height: 1.8rem;
+  }
+
+  .skills_item {
+    padding: 20px 20px 12px;
+  }
+
+  .skills_content h4 {
+    min-height: auto;
+  }
+
+  .brand {
+    font-size: 2.4rem;
+    margin-top: 1.5rem !important;
+  }
+
+  .graph {
+    font-size: 1.8rem;
+  }
+
+  .competences-cont p {
+    text-align: left;
+  }
+
+  .project_media {
+    height: 110px;
+  }
+
+  .contact_card {
+    padding: 30px 20px 25px;
+  }
+}
+
+/*==============================
+  ≤ 650px — le point signalé : navbar, ancre "Home"
+  et largeur qui débordent
+==============================*/
 @media (max-width: 650px) {
-    
-   .autoWriting span{
-    font-size: 2rem;
- 
-   }
 
- p {
-      justify-content:center;
-      text-align: justify;
-   }
+  body {
+    max-width: 100vw;
+    height: auto;
+    overflow-x: hidden;
+  }
+
+  .container,
+  .container-fluid {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+
+  /* Header plus bas : ajuste le décalage utilisé par scroll-padding-top */
+  :root {
+    --header-height: 64px;
+  }
+
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+
+  .navbar-collapse {
+    text-align: center;
+    padding: 10px 0 16px;
+  }
+
+  .navbar-nav {
+    gap: 8px;
+  }
+
+  .nav-link {
+    display: inline-block;
+  }
+
+  .main h1 {
+    font-size: 1.4rem;
+    line-height: 1.3;
+  }
+
+  .autoWriting span {
+    font-size: 1.9rem;
+    word-break: break-word;
+  }
+
+  .cursor {
+    height: 1.5rem;
+  }
+
+  p {
+    text-align: left;
+  }
+
+  .alert {
+    font-size: 0.9rem;
+    padding: 0.9rem 2.5rem 0.9rem 1rem;
+  }
+
+  .skills_title h2 {
+    font-size: 1.5rem;
+  }
+
+  .brand {
+    font-size: 2rem;
+    letter-spacing: -1px;
+  }
+
+  .graph {
+    font-size: 1.5rem;
+  }
+
+  .project_body {
+    padding: 16px;
+  }
+
+  .contact_grid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .contact_text {
+    text-align: left;
+  }
+
+  .contact_card {
+    padding: 25px 18px 20px;
+  }
+
+  .contact_footer {
+    flex-direction: column;
+  }
+
+  .contact_footer .btn {
+    width: 100%;
+  }
 }
 
+/*==============================
+  ≤ 575.98px — Petits mobiles
+==============================*/
+@media (max-width: 575.98px) {
+
+  .main h1 {
+    font-size: 1.25rem;
+  }
+
+  .autoWriting span {
+    font-size: 1.6rem;
+  }
+
+  .brand {
+    font-size: 1.7rem;
+  }
+
+  .skills_tags .tag,
+  .project_tags .tag {
+    font-size: 11px;
+    padding: 6px 10px;
+  }
+
+  .scroll-top {
+    width: 38px;
+    height: 38px;
+    right: 10px;
+  }
+}
 
 
