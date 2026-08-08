@@ -1,0 +1,29 @@
+@media (max-width: 768px) {
+   .autoWriting span {
+    font-size: 3.5rem;
+   }
+
+   p {
+      justify-content:center;
+      text-align:justify;
+   }
+}
+
+
+
+
+@media (max-width: 650px) {
+    
+   .autoWriting span{
+    font-size: 2rem;
+ 
+   }
+
+ p {
+      justify-content:center;
+      text-align: justify;
+   }
+}
+
+
+
