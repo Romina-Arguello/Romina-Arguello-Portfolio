@@ -257,11 +257,203 @@
 
     </section>
 
-    <!-- ==================== PROJECTS (step 3) ==================== -->
-    <section class="section" id="projets" aria-label="Projets"></section>
+    <!-- ==================== PROJECTS ==================== -->
+    <section class="section projects" id="projets" aria-labelledby="projects-title">
 
-    <!-- ==================== JOURNEY (step 3) ==================== -->
-    <section class="section" id="parcours" aria-label="Parcours"></section>
+      <header class="section-head">
+        <p class="kicker"><span class="kicker__number">03</span>Projets</p>
+        <h2 id="projects-title">Des projets pensés <br>pour être <em>utiles.</em></h2>
+        <p class="section-head__intro">
+          Une sélection de projets réalisés en formation et en entreprise, seule ou en équipe.
+        </p>
+      </header>
+
+      <!-- Project 1 -->
+      <article class="project">
+        <div class="project__visual project__visual--navy">
+          <!-- TODO: replace the mockup with a screenshot:
+               <img src="assets/img/projects/la-petite-batellerie.webp" alt="Page d'accueil de La Petite Batellerie" width="1200" height="750"> -->
+          <div class="mockup" aria-hidden="true">
+            <div class="mockup__bar"><i></i><i></i><i></i></div>
+            <div class="mockup__screen">
+              <p class="mockup__brand">La Petite Batellerie</p>
+              <p class="mockup__title">L'élégance <br>nautique.</p>
+              <span class="mockup__button">Découvrir</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="project__body">
+          <p class="project__meta"><span>01</span>E-commerce · Stage · 8 semaines</p>
+          <h3 class="project__title">La Petite Batellerie</h3>
+          <p class="project__text">
+            Boutique en ligne d'une jeune marque française de vêtements au style nautique.
+            J'ai mené le projet en autonomie : modélisation UML, conception de la base de données,
+            développement du catalogue, de l'espace client et du back-office.
+          </p>
+          <ul class="tag-list" aria-label="Technologies utilisées">
+            <li class="tag">Symfony 7.4</li>
+            <li class="tag">PHP</li>
+            <li class="tag">Twig</li>
+            <li class="tag">Doctrine</li>
+            <li class="tag">PostgreSQL</li>
+            <li class="tag">EasyAdmin</li>
+          </ul>
+          <div class="project__links">
+            <a class="link-arrow" href="projets/la-petite-batellerie.html">Voir l'étude de cas <span aria-hidden="true">→</span></a>
+            <span class="project__note">Code disponible sur demande</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 (reversed: visual on the right) -->
+      <article class="project project--reverse">
+        <div class="project__visual project__visual--pink">
+          <!-- TODO: replace the mockup with a screenshot: assets/img/projects/promo-eni.webp -->
+          <div class="mockup" aria-hidden="true">
+            <div class="mockup__bar"><i></i><i></i><i></i></div>
+            <div class="mockup__screen">
+              <p class="mockup__brand">Promo ENI</p>
+              <p class="mockup__title">Les apprenants <br>de la promo.</p>
+              <div class="mockup__cards"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project__body">
+          <p class="project__meta"><span>02</span>Projet individuel · Formation</p>
+          <h3 class="project__title">Promo ENI</h3>
+          <p class="project__text">
+            Site présentant les apprenants de ma promotion. Les données sont chargées dynamiquement
+            depuis un fichier JSON avec <code>fetch</code>, les préférences d'affichage sont mémorisées
+            en <code>localStorage</code> et une carte interactive est réalisée avec Leaflet.
+          </p>
+          <ul class="tag-list" aria-label="Technologies utilisées">
+            <li class="tag">HTML5</li>
+            <li class="tag">CSS3</li>
+            <li class="tag">Bootstrap</li>
+            <li class="tag">JavaScript</li>
+            <li class="tag">Fetch / JSON</li>
+            <li class="tag">Leaflet</li>
+          </ul>
+          <div class="project__links">
+            <a class="link-arrow" href="https://github.com/Romina-Arguello/eni-promo" target="_blank" rel="noopener">
+              Voir le code <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project">
+        <div class="project__visual project__visual--dark">
+          <!-- TODO: replace the mockup with a screenshot: assets/img/projects/sortir-com.webp -->
+          <div class="mockup" aria-hidden="true">
+            <div class="mockup__bar"><i></i><i></i><i></i></div>
+            <div class="mockup__screen">
+              <p class="mockup__brand">Sortir.com</p>
+              <p class="mockup__title">Organiser <br>une sortie.</p>
+              <div class="mockup__rows"><i></i><i></i><i></i></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project__body">
+          <p class="project__meta"><span>03</span>Projet d'équipe · 3 développeurs</p>
+          <h3 class="project__title">Sortir.com</h3>
+          <p class="project__text">
+            Application Symfony permettant aux étudiants d'un campus d'organiser des sorties et de s'y
+            inscrire. Mon rôle : la page d'accueil avec la recherche multicritère, l'inscription et le
+            désistement, puis le filtrage dynamique des lieux selon la ville (<code>fetch</code>, route API
+            et événements de formulaire).
+          </p>
+          <ul class="tag-list" aria-label="Technologies utilisées">
+            <li class="tag">Symfony</li>
+            <li class="tag">PHP</li>
+            <li class="tag">Doctrine</li>
+            <li class="tag">Twig</li>
+            <li class="tag">JavaScript</li>
+            <li class="tag">Bootstrap</li>
+          </ul>
+          <div class="project__links">
+            <a class="link-arrow" href="https://github.com/Romina-Arguello/sortir-com" target="_blank" rel="noopener">
+              Voir le code <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ==================== GRAPHIC DESIGN ==================== -->
+    <section class="section section--dark design" id="graphisme" aria-labelledby="design-title">
+      <div class="design__grid">
+
+        <div class="design__text">
+          <p class="kicker"><span class="kicker__number">04</span>Graphisme</p>
+          <h2 id="design-title">Avant le code, <br>le <em>design.</em></h2>
+          <p>
+            J'ai réalisé l'identité visuelle d'<strong>Olimpia Showroom</strong>, une marque de vêtements :
+            logo, palette de couleurs, typographie et supports de communication.
+          </p>
+          <p>
+            Cette expérience m'a appris à penser la cohérence visuelle et la communication, une
+            sensibilité que j'applique aujourd'hui à mes interfaces web.
+          </p>
+        </div>
+
+        <div class="design__gallery">
+          <figure class="design__item design__item--wide">
+            <img src="assets/img/graphisme/olimpia-supports.webp"
+              alt="Supports de communication Olimpia : affiches New Drop, Black Friday et jeu concours"
+              width="500" height="310" loading="lazy">
+          </figure>
+          <figure class="design__item">
+            <img src="assets/img/graphisme/olimpia-logo.webp" alt="Logo Olimpia Showroom"
+              width="300" height="300" loading="lazy">
+          </figure>
+          <figure class="design__item">
+            <img src="assets/img/graphisme/olimpia-campagne.webp" alt="Visuel de campagne Olimpia, Volumen #1"
+              width="250" height="250" loading="lazy">
+          </figure>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ==================== JOURNEY ==================== -->
+    <section class="section journey" id="parcours" aria-labelledby="journey-title">
+
+      <header class="section-head">
+        <p class="kicker"><span class="kicker__number">05</span>Parcours</p>
+        <h2 id="journey-title">Apprendre, pratiquer, <br><em>évoluer.</em></h2>
+      </header>
+
+      <ol class="timeline">
+        <li class="timeline__item">
+          <p class="timeline__date">Les débuts</p>
+          <h3 class="timeline__title">Design graphique &amp; WordPress</h3>
+          <p>Création de visuels et d'identités graphiques, puis de sites sous WordPress et WooCommerce.</p>
+        </li>
+        <li class="timeline__item">
+          <!-- TODO: add the training dates -->
+          <p class="timeline__date">Formation</p>
+          <h3 class="timeline__title">Développeuse Web et Web Mobile</h3>
+          <p>ENI École Informatique · Titre RNCP de niveau 5 (Bac+2)</p>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__date"><time datetime="2026-08-31">31 août</time> → <time datetime="2026-10-23">23 octobre 2026</time></p>
+          <h3 class="timeline__title">Stage · La Petite Batellerie</h3>
+          <p>Conception et développement, en autonomie, d'une boutique e-commerce avec Symfony.</p>
+        </li>
+        <li class="timeline__item timeline__item--next">
+          <p class="timeline__date">Prochaine étape</p>
+          <h3 class="timeline__title">Conceptrice Développeuse d'Applications</h3>
+          <p>Titre RNCP de niveau 6 (Bac+3) en alternance : je recherche une entreprise d'accueil.</p>
+        </li>
+      </ol>
+
+    </section>
 
     <!-- ==================== CONTACT (step 4) ==================== -->
     <section class="section" id="contact" aria-label="Contact"></section>
