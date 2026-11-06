@@ -189,3 +189,151 @@
 .section--dark .section-head__intro {
   color: var(--color-muted-light);
 }
+
+/* --------------------------------------------------------------------------
+   3. Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  padding: 4rem var(--gutter) 2rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-top: 1px solid var(--color-line-light);
+}
+
+.site-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;   /* brand on the left, links on the right */
+  align-items: flex-start;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.site-footer__tagline {
+  margin: .75rem 0 0;
+  color: var(--color-muted-light);
+  font-size: .85rem;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.site-footer a:not(.brand) {
+  color: var(--color-muted-light);
+  transition: color var(--duration) var(--ease-out);
+}
+
+.site-footer a:not(.brand):hover,
+.site-footer a:not(.brand):focus-visible {
+  color: var(--color-white);
+}
+
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-line-light);
+  color: var(--color-muted-light);
+  font-size: .75rem;
+}
+
+.site-footer__bottom p {
+  margin: 0;
+}
+
+/* Leaves room for the back to top button (bottom right) */
+.site-footer__bottom {
+  padding-right: 4.5rem;
+}
+
+/* Short footer (secondary pages): no top line, less space */
+.site-footer:has(> .site-footer__bottom:only-child) {
+  padding-top: 2rem;
+}
+
+.site-footer__bottom:only-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Back to top button
+   -------------------------------------------------------------------------- */
+.scroll-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));  /* iPhone home bar */
+  z-index: 1020;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-white);
+  border-radius: 50%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  /* Hidden by default: invisible, not clickable, slightly lower */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(1rem);
+  transition: opacity var(--duration) var(--ease-out),
+              visibility var(--duration) var(--ease-out),
+              transform var(--duration) var(--ease-out),
+              background-color var(--duration) var(--ease-out),
+              color var(--duration) var(--ease-out);
+}
+
+/* Added by main.js */
+.scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hover: black and white inverted (no pink!) */
+.scroll-top:hover,
+.scroll-top:focus-visible {
+  border-color: var(--color-black);
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+/* --------------------------------------------------------------------------
+   5. Simple text pages (legal notice)
+   -------------------------------------------------------------------------- */
+.legal {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: calc(var(--header-height) + 4rem) var(--gutter) var(--section-space);
+}
+
+.legal h1 {
+  margin-bottom: 3rem;
+  font-size: clamp(2rem, 5vw, 3.5rem);
+}
+
+.legal h2 {
+  margin: 2.75rem 0 1rem;
+  font-size: 1.1rem;
+  letter-spacing: .06em;
+}
+
+.legal p {
+  color: var(--color-muted-dark);
+}
+
+.legal a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
