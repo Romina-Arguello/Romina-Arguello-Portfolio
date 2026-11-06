@@ -19,7 +19,6 @@
   --font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
   --font-heading: "Montserrat", system-ui, sans-serif;     /* titles: weight 900, uppercase */
   --font-accent: "Playfair Display", Georgia, serif;       /* highlighted words, italic */
-  --font-display: "Abril Fatface", Georgia, serif;         /* logo, decorative titles */
 
   /* Layout */
   --header-height: 80px;

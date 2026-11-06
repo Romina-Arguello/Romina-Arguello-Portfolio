@@ -9,6 +9,7 @@
   <title>Romina Argüello — Développeuse Web | PHP · Symfony · JavaScript</title>
   <meta name="description"
     content="Portfolio de Romina Argüello, développeuse web à Aix-les-Bains : applications PHP/Symfony, interfaces responsives et accessibles. Disponible en alternance et en freelance.">
+  <link rel="canonical" href="https://romina-arguello.website/">
   <meta name="author" content="Romina Argüello">
 
   <!-- Open Graph: preview when the link is shared (LinkedIn, Slack...) -->
@@ -18,20 +19,21 @@
     content="Applications PHP/Symfony, interfaces responsives et animées. Découvrez mes projets.">
   <meta property="og:url" content="https://romina-arguello.website/">
   <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://romina-arguello.website/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Romina Argüello, développeuse web">
+  <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon -->
   <link rel="icon" href="assets/img/favicon.png" type="image/png">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:wght@400;500;600;700;900&family=Playfair+Display:ital,wght@1,500&display=swap"
-    rel="stylesheet">
+  <!-- Fonts (self-hosted): the main title font is preloaded to appear sooner -->
+  <link rel="preload" href="assets/fonts/montserrat-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
 
-  <!-- Vendor CSS -->
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <!-- Vendor CSS (self-hosted) -->
+  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
 
   <!-- Project CSS (order matters: general → specific) -->
   <link rel="stylesheet" href="assets/css/base.css">
@@ -51,7 +53,7 @@
   <header class="site-header" id="siteHeader">
     <nav class="site-nav navbar navbar-expand-lg" aria-label="Navigation principale">
 
-      <a class="brand" href="#accueil" aria-label="Romina Argüello — retour à l'accueil">RA<span>.</span></a>
+      <a class="brand" href="#accueil">RA<span>.</span><span class="visually-hidden"> Romina Argüello, retour à l'accueil</span></a>
 
       <button class="nav-toggle navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
         data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Ouvrir le menu">
@@ -102,7 +104,7 @@
 
       </div>
 
-      <a class="scroll-hint" href="#a-propos" aria-label="Faire défiler vers la section À propos">
+      <a class="scroll-hint" href="#a-propos" aria-label="Scroll : aller à la section À propos">
         <span>Scroll</span>
         <span class="scroll-hint__line" aria-hidden="true"></span>
       </a>
@@ -497,9 +499,7 @@
   </button>
 
   <!-- Vendor JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-    crossorigin="anonymous"></script>
+  <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
 
   <!-- Project JS -->
   <script src="assets/js/nav.js" defer></script>
