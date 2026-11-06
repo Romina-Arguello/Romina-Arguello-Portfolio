@@ -189,6 +189,7 @@
               <li class="tag">JavaScript</li>
               <li class="tag">Bootstrap</li>
               <li class="tag">Twig</li>
+              <li class="tag">Stimulus</li>
               <li class="tag">Fetch / JSON</li>
             </ul>
           </div>
@@ -215,7 +216,6 @@
           <div class="skill__content">
             <p class="skill__text">Modélisation de bases relationnelles et requêtes optimisées.</p>
             <ul class="tag-list" aria-label="Technologies de données">
-              <li class="tag">PostgreSQL</li>
               <li class="tag">MySQL</li>
               <li class="tag">SQL</li>
               <li class="tag">UML</li>
@@ -246,6 +246,7 @@
             <p class="skill__text">Un code sécurisé, accessible et respectueux des données des utilisateurs.</p>
             <ul class="tag-list" aria-label="Bonnes pratiques">
               <li class="tag">Sécurité (CSRF, XSS)</li>
+              <li class="tag">Tests PHPUnit</li>
               <li class="tag">Accessibilité</li>
               <li class="tag">RGPD</li>
               <li class="tag">SEO</li>
@@ -271,16 +272,8 @@
       <!-- Project 1 -->
       <article class="project">
         <div class="project__visual project__visual--navy">
-          <!-- TODO: replace the mockup with a screenshot:
-               <img src="assets/img/projects/la-petite-batellerie.webp" alt="Page d'accueil de La Petite Batellerie" width="1200" height="750"> -->
-          <div class="mockup" aria-hidden="true">
-            <div class="mockup__bar"><i></i><i></i><i></i></div>
-            <div class="mockup__screen">
-              <p class="mockup__brand">La Petite Batellerie</p>
-              <p class="mockup__title">L'élégance <br>nautique.</p>
-              <span class="mockup__button">Découvrir</span>
-            </div>
-          </div>
+          <img class="project__shot" src="assets/img/projects/la-petite-batellerie.webp"
+            alt="Page d'accueil de la boutique La Petite Batellerie" width="1200" height="750" loading="lazy">
         </div>
 
         <div class="project__body">
@@ -293,10 +286,11 @@
           </p>
           <ul class="tag-list" aria-label="Technologies utilisées">
             <li class="tag">Symfony 7.4</li>
-            <li class="tag">PHP</li>
+            <li class="tag">PHP 8.4</li>
             <li class="tag">Twig</li>
+            <li class="tag">Stimulus</li>
             <li class="tag">Doctrine</li>
-            <li class="tag">PostgreSQL</li>
+            <li class="tag">MySQL</li>
             <li class="tag">EasyAdmin</li>
           </ul>
           <div class="project__links">
@@ -308,16 +302,9 @@
 
       <!-- Project 2 (reversed: visual on the right) -->
       <article class="project project--reverse">
-        <div class="project__visual project__visual--pink">
-          <!-- TODO: replace the mockup with a screenshot: assets/img/projects/promo-eni.webp -->
-          <div class="mockup" aria-hidden="true">
-            <div class="mockup__bar"><i></i><i></i><i></i></div>
-            <div class="mockup__screen">
-              <p class="mockup__brand">Promo ENI</p>
-              <p class="mockup__title">Les apprenants <br>de la promo.</p>
-              <div class="mockup__cards"><i></i><i></i><i></i></div>
-            </div>
-          </div>
+        <div class="project__visual project__visual--dark">
+          <img class="project__shot" src="assets/img/projects/promo-eni.webp"
+            alt="Page d'accueil du site ENI-Promo" width="1200" height="568" loading="lazy">
         </div>
 
         <div class="project__body">
@@ -346,16 +333,9 @@
 
       <!-- Project 3 -->
       <article class="project">
-        <div class="project__visual project__visual--dark">
-          <!-- TODO: replace the mockup with a screenshot: assets/img/projects/sortir-com.webp -->
-          <div class="mockup" aria-hidden="true">
-            <div class="mockup__bar"><i></i><i></i><i></i></div>
-            <div class="mockup__screen">
-              <p class="mockup__brand">Sortir.com</p>
-              <p class="mockup__title">Organiser <br>une sortie.</p>
-              <div class="mockup__rows"><i></i><i></i><i></i></div>
-            </div>
-          </div>
+        <div class="project__visual project__visual--pink">
+          <img class="project__shot" src="assets/img/projects/sortir-com.webp"
+            alt="Page « Liste des sorties » de Sortir.com avec les filtres de recherche et le tableau des sorties" width="1200" height="568" loading="lazy">
         </div>
 
         <div class="project__body">
@@ -436,8 +416,7 @@
           <p>Création de visuels et d'identités graphiques, puis de sites sous WordPress et WooCommerce.</p>
         </li>
         <li class="timeline__item">
-          <!-- TODO: add the training dates -->
-          <p class="timeline__date">Formation</p>
+          <p class="timeline__date">Depuis <time datetime="2026-05">mai 2026</time></p>
           <h3 class="timeline__title">Développeuse Web et Web Mobile</h3>
           <p>ENI École Informatique · Titre RNCP de niveau 5 (Bac+2)</p>
         </li>

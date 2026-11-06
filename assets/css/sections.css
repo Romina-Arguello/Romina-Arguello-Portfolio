@@ -277,94 +277,22 @@
   overflow: hidden;
 }
 
-.project__visual img {
+/* Screenshot: slightly tilted, straightens on hover */
+.project__shot {
   width: 100%;
   height: auto;
-  box-shadow: 0 30px 60px rgba(0, 0, 0, .3);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, .35);
+  transform: rotate(-2deg);
+  transition: transform .8s var(--ease-out);
+}
+
+.project:hover .project__shot {
+  transform: rotate(0) scale(1.03);
 }
 
 .project__visual--navy { background-color: #162e60; }   /* La Petite Batellerie brand color */
 .project__visual--pink { background-color: var(--color-pink); }
 .project__visual--dark { background-color: #1c1c1c; }
-
-/* Browser mockup drawn in CSS (temporary, until real screenshots) */
-.mockup {
-  width: 100%;
-  background-color: var(--color-white);
-  box-shadow: 0 30px 60px rgba(0, 0, 0, .3);
-  transform: rotate(-2deg);
-  transition: transform .8s var(--ease-out);
-}
-
-.project:hover .mockup {
-  transform: rotate(0) scale(1.03);
-}
-
-.mockup__bar {
-  display: flex;
-  gap: 6px;
-  padding: .7rem .9rem;
-  background-color: #ececec;
-}
-
-.mockup__bar i {
-  width: 8px;
-  height: 8px;
-  border-radius: 50%;
-  background-color: #c4c4c4;
-}
-
-.mockup__screen {
-  padding: 1.75rem 1.75rem 2rem;
-  color: var(--color-black);
-}
-
-.mockup__brand {
-  margin-bottom: 1.75rem;
-  padding-bottom: .75rem;
-  border-bottom: 1px solid var(--color-line-dark);
-  font-size: .62rem;
-  font-weight: 700;
-  letter-spacing: .2em;
-  text-transform: uppercase;
-}
-
-.mockup__title {
-  margin-bottom: 1.25rem;
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-size: clamp(1.4rem, 2.6vw, 2.1rem);
-  line-height: 1.1;
-}
-
-.mockup__button {
-  display: inline-block;
-  padding: .45rem .9rem;
-  background-color: #162e60;
-  color: var(--color-white);
-  font-size: .6rem;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-.mockup__cards,
-.mockup__rows {
-  display: grid;
-  gap: .5rem;
-}
-
-.mockup__cards { grid-template-columns: repeat(3, 1fr); }
-
-.mockup__cards i {
-  aspect-ratio: 1;
-  background-color: #f1f1f1;
-  border-bottom: 3px solid var(--color-pink);
-}
-
-.mockup__rows i {
-  height: 14px;
-  background-color: #f1f1f1;
-}
 
 /* Text side */
 .project__meta {
