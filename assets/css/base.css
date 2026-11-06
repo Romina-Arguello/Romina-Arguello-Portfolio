@@ -1,0 +1,152 @@
+/* ==========================================================================
+   BASE — design tokens, reset, typography, accessibility
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Design tokens (CSS custom properties)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Colors */
+  --color-black: #0b0b0b;
+  --color-white: #ffffff;
+  --color-pink: #ff73cc;           /* main accent (brand pink) */
+  --color-muted-dark: rgba(11, 11, 11, .62);
+  --color-muted-light: rgba(255, 255, 255, .68);
+  --color-line-dark: rgba(11, 11, 11, .12);
+  --color-line-light: rgba(255, 255, 255, .16);
+
+  /* Typography */
+  --font-body: "Montserrat", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-heading: "Montserrat", system-ui, sans-serif;     /* titles: weight 900, uppercase */
+  --font-accent: "Playfair Display", Georgia, serif;       /* highlighted words, italic */
+  --font-display: "Abril Fatface", Georgia, serif;         /* logo, decorative titles */
+
+  /* Layout */
+  --header-height: 80px;
+  --gutter: clamp(1.25rem, 5vw, 4.5rem);          /* side spacing */
+  --section-space: clamp(5rem, 10vw, 9rem);       /* vertical spacing */
+
+  /* Motion */
+  --ease-out: cubic-bezier(.22, 1, .36, 1);
+  --duration: .45s;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset (complements Bootstrap's "Reboot")
+   -------------------------------------------------------------------------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--header-height);  /* anchors are not hidden under the fixed header */
+}
+
+body {
+  margin: 0;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  overflow-x: clip;                          /* no horizontal scroll, without breaking position: sticky */
+}
+
+img,
+svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* --------------------------------------------------------------------------
+   3. Typography
+   -------------------------------------------------------------------------- */
+h1,
+h2,
+h3 {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-weight: 900;
+  line-height: 1.08;
+  letter-spacing: -.01em;
+  text-transform: uppercase;
+}
+
+h1 { font-size: clamp(2.1rem, 5vw, 4.25rem); }
+h2 { font-size: clamp(1.9rem, 4.5vw, 3.75rem); }
+h3 { font-size: clamp(1.25rem, 2.2vw, 1.75rem); }
+
+/* Highlighted words in titles: <em>sur mesure.</em>
+   Serif italic, lowercase, with a pink "highlighter" band behind.
+   (Pink text on white would not be readable enough: contrast < 3:1) */
+h1 em,
+h2 em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  text-transform: none;
+  background-image: linear-gradient(transparent 60%, var(--color-pink) 60%, var(--color-pink) 92%, transparent 92%);
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;      /* the band follows the text if it wraps */
+  padding: 0 .1em;
+}
+
+p {
+  margin: 0 0 1rem;
+}
+
+::selection {
+  background-color: var(--color-pink);
+  color: var(--color-black);
+}
+
+/* --------------------------------------------------------------------------
+   4. Accessibility
+   -------------------------------------------------------------------------- */
+
+/* Visible outline only for keyboard navigation */
+:focus-visible {
+  outline: 2px solid var(--color-pink);
+  outline-offset: 4px;
+}
+
+/* "Skip to content" link: hidden until it receives focus */
+.skip-link {
+  position: absolute;
+  top: -100px;
+  left: 1rem;
+  z-index: 2000;
+  padding: .75rem 1.25rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-weight: 600;
+}
+
+.skip-link:focus {
+  top: 1rem;
+}
+
+/* Users who asked their OS to reduce motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: .01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: .01ms !important;
+  }
+}

@@ -1,0 +1,276 @@
+/* ==========================================================================
+   LAYOUT — header, sections, hero
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Header & navigation
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: var(--color-black);
+  transition: background-color var(--duration) ease;
+}
+
+/* Added by nav.js once the page is scrolled */
+.site-header.is-scrolled {
+  background-color: rgba(11, 11, 11, .8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.site-nav {
+  min-height: var(--header-height);
+  padding: 0 var(--gutter);
+}
+
+/* Logo "RA." */
+.brand {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-white);
+  letter-spacing: .02em;
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.brand span {
+  color: var(--color-pink);
+}
+
+.brand:hover {
+  color: var(--color-white);
+  transform: scale(1.05);
+}
+
+/* Links */
+.site-nav .nav-link {
+  position: relative;
+  margin: 0 1.25rem;
+  padding: .5rem 0;
+  color: var(--color-white);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus,
+.site-nav .nav-link.active {
+  color: var(--color-white);
+}
+
+/* Animated underline: enters from the left, leaves to the right */
+.site-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: .2rem;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-white);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.site-nav .nav-link:hover::after,
+.site-nav .nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Burger button: 2 lines that turn into an X */
+.nav-toggle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+}
+
+.nav-toggle:focus {
+  box-shadow: none;              /* removes Bootstrap's blue halo */
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--color-pink);
+}
+
+.nav-toggle__line {
+  position: absolute;
+  left: 10px;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-white);
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.nav-toggle__line:nth-child(1) { top: 17px; }
+.nav-toggle__line:nth-child(2) { top: 25px; }
+
+/* Bootstrap removes the .collapsed class when the menu is open */
+.nav-toggle:not(.collapsed) .nav-toggle__line:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.nav-toggle:not(.collapsed) .nav-toggle__line:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* Mobile menu (< 992px) */
+@media (max-width: 991.98px) {
+  .site-nav .navbar-collapse {
+    padding: 1.5rem 0 2.5rem;
+  }
+
+  .site-nav .nav-link {
+    margin: 0;
+    padding: 1rem 0;
+    font-size: 1.35rem;
+    font-weight: 900;
+    letter-spacing: .02em;
+    border-bottom: 1px solid var(--color-line-light);
+    transition: color var(--duration) var(--ease-out), padding-left var(--duration) var(--ease-out);
+  }
+
+  /* Mobile: the link shifts right and turns pink instead of being underlined */
+  .site-nav .nav-link::after {
+    display: none;
+  }
+
+  .site-nav .nav-link:hover,
+  .site-nav .nav-link.active {
+    padding-left: .75rem;
+    color: var(--color-pink);
+  }
+
+  .btn-nav {
+    margin-top: 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Sections
+   -------------------------------------------------------------------------- */
+.section {
+  padding: var(--section-space) var(--gutter);
+}
+
+/* --------------------------------------------------------------------------
+   3. Hero — white, black text, centered content
+   -------------------------------------------------------------------------- */
+.hero {
+  position: relative;
+  min-height: 100svh;            /* svh: real visible height on mobile */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: calc(var(--header-height) + 3rem) var(--gutter) 9rem;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  text-align: center;
+}
+
+.hero__inner {
+  max-width: 60rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;           /* centers the children horizontally */
+}
+
+.hero__title {
+  margin-bottom: 2rem;
+}
+
+.hero__lead {
+  max-width: 40rem;
+  margin-bottom: 2.75rem;
+  color: var(--color-muted-dark);
+  font-size: clamp(1rem, 1.4vw, 1.125rem);
+}
+
+.hero__lead strong {
+  color: var(--color-black);
+  font-weight: 700;
+}
+
+.hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem 2.5rem;
+}
+
+/* Availability list with pink check marks */
+.availability {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem 2rem;
+  margin: 3.5rem 0 0;
+  padding: 1.25rem 0 0;
+  border-top: 1px solid var(--color-line-dark);
+  list-style: none;
+  font-size: .7rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.availability li::before {
+  content: "✓";
+  margin-right: .5rem;
+  color: var(--color-pink);
+  font-weight: 900;
+}
+
+/* "Scroll" hint: centered at the bottom, with a vertical moving line */
+.scroll-hint {
+  position: absolute;
+  left: 50%;
+  bottom: 1.5rem;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .75rem;
+  color: var(--color-muted-dark);
+  font-size: .62rem;
+  font-weight: 600;
+  letter-spacing: .25em;
+  text-transform: uppercase;
+}
+
+.scroll-hint__line {
+  position: relative;
+  width: 1px;
+  height: 48px;
+  overflow: hidden;
+  background-color: var(--color-line-dark);
+}
+
+.scroll-hint__line::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-color: var(--color-black);
+  animation: scroll-line 2.2s var(--ease-out) infinite;
+}
+
+@keyframes scroll-line {
+  0%   { transform: translateY(-100%); }
+  100% { transform: translateY(100%); }
+}
+
+/* Hidden on small or short screens: not enough room */
+@media (max-width: 575.98px), (max-height: 800px) {
+  .scroll-hint {
+    display: none;
+  }
+}
