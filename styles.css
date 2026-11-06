@@ -41,6 +41,16 @@ html {
   scroll-padding-top: var(--header-height);
 }
 
+/* Refuerzo: si el scroll a las anclas se dispara desde JS (scrollIntoView),
+   scroll-padding-top en html no siempre alcanza — esto cubre ese caso */
+#home,
+#skills,
+#portfolio,
+#projets,
+#contact {
+  scroll-margin-top: var(--header-height);
+}
+
 /* Empêche toute image/svg de provoquer un scroll horizontal */
 img,
 svg {
@@ -52,6 +62,11 @@ svg {
   font-family: var(--Main-text-font);
   color: var(--text-color-black);
   font-weight: 900;
+}
+
+.hero.section {
+  padding-top: 6rem;
+  padding-bottom: 3rem;
 }
 
 p {
@@ -329,6 +344,11 @@ p {
 /*--------------------------------------------------------------
 # Portfolio Section (Graphisme)
 --------------------------------------------------------------*/
+.portfolio {
+  padding-top: 5rem;
+  padding-bottom: 3rem;
+}
+
 .portfolio_title {
   font-family: var(--Main-text-font);
   color: var(--text-color-black);
@@ -362,6 +382,8 @@ p {
 .projets {
   background-color: var(--background-color-white);
   font-family: var(--Main-text-font);
+  padding-top: 5rem;
+  padding-bottom: 3rem;
 }
 
 .projets h2 {
@@ -488,6 +510,8 @@ p {
   background-color: #111;
   color: var(--text-color-white);
   font-family: var(--Main-text-font);
+  padding-top: 5rem;
+  padding-bottom: 5rem;
 }
 
 .contact h2 {
@@ -673,6 +697,13 @@ p {
   justify-content: center;
 }
 
+.scroll-top.active {
+  visibility: visible;
+  opacity: 1;
+  /* 20px + lo que ocupe la barra propia del navegador (Safari/Chrome mobile) */
+  bottom: calc(20px + env(safe-area-inset-bottom, 0px));
+}
+
 .scroll-top i {
   font-size: 24px;
   color: var(--text-color-white);
@@ -682,10 +713,3 @@ p {
 .scroll-top:hover {
   background-color: var(--second-accent-color);
 }
-
-.scroll-top.active {
-  visibility: visible;
-  opacity: 1;
-  bottom: 15px;
-}
-
