@@ -117,3 +117,66 @@
 .link-arrow:focus-visible::after {
   transform: scaleX(0);
 }
+
+/* --------------------------------------------------------------------------
+   3. Kicker (numbered section label: "01 — À propos")
+   -------------------------------------------------------------------------- */
+.kicker {
+  display: inline-flex;
+  align-items: center;
+  gap: .9rem;
+  margin-bottom: 1.5rem;
+  font-size: .72rem;
+  font-weight: 700;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+}
+
+.kicker__number {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+/* Small line between the number and the label */
+.kicker__number::after {
+  content: "";
+  display: inline-block;
+  width: 32px;
+  height: 1px;
+  margin-left: .9rem;
+  vertical-align: middle;
+  background-color: currentColor;
+  opacity: .4;
+}
+
+/* On dark sections the pink number is readable (contrast > 9:1) */
+.section--dark .kicker__number {
+  color: var(--color-pink);
+}
+
+/* --------------------------------------------------------------------------
+   4. Tags (technologies)
+   -------------------------------------------------------------------------- */
+.tag-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tag {
+  padding: .45rem .8rem;
+  border: 1px solid var(--color-line-dark);
+  font-size: .7rem;
+  font-weight: 600;
+  letter-spacing: .04em;
+  transition: border-color var(--duration) var(--ease-out), color var(--duration) var(--ease-out);
+}
+
+.section--dark .tag {
+  border-color: var(--color-line-light);
+}

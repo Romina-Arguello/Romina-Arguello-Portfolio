@@ -37,6 +37,7 @@
   <link rel="stylesheet" href="assets/css/base.css">
   <link rel="stylesheet" href="assets/css/layout.css">
   <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
 </head>
 
 <!-- Bootstrap ScrollSpy: highlights the nav link of the section currently on screen -->
@@ -106,11 +107,155 @@
       </a>
     </section>
 
-    <!-- ==================== ABOUT (step 2) ==================== -->
-    <section class="section" id="a-propos" aria-label="À propos"></section>
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section about" id="a-propos" aria-labelledby="about-title">
 
-    <!-- ==================== SKILLS (step 2) ==================== -->
-    <section class="section" id="competences" aria-label="Compétences"></section>
+      <header class="section-head">
+        <p class="kicker"><span class="kicker__number">01</span>À propos</p>
+        <h2 id="about-title">De la curiosité <br>au <em>code.</em></h2>
+      </header>
+
+      <!-- Photo placeholder: replace the <div> below with
+           <figure class="about__photo"><img src="assets/img/romina-arguello.webp"
+           alt="Portrait de Romina Argüello" width="280" height="280"></figure> -->
+      <div class="about__photo about__photo--placeholder" aria-hidden="true">RA<span>.</span></div>
+
+      <div class="about__body">
+        <p class="about__lead">
+          Mon parcours dans le web a commencé par le <strong>design graphique</strong> et la création de
+          sites internet. D'abord attirée par l'aspect visuel, j'ai progressivement eu envie d'aller plus
+          loin : comprendre la logique derrière les interfaces, explorer le fonctionnement des applications
+          et apprendre à construire des solutions web complètes.
+        </p>
+
+        <div class="about__columns">
+          <p>
+            Après une première expérience dans la création et la gestion de sites sous
+            <strong>WordPress</strong> et <strong>WooCommerce</strong>, j'ai choisi de faire de cet intérêt
+            un véritable projet professionnel en intégrant la formation
+            <strong>Développeuse Web et Web Mobile</strong> à l'ENI École Informatique.
+          </p>
+          <p>
+            Lors de mon stage chez <strong>La Petite Batellerie</strong>, j'ai conçu et développé en
+            autonomie une boutique e-commerce avec Symfony : de la modélisation UML et la conception de
+            la base de données jusqu'au back-office et aux fonctionnalités métier.
+          </p>
+          <p>
+            Aujourd'hui, je souhaite approfondir mes compétences en développement et poursuivre mon
+            parcours vers le titre <strong>Conceptrice Développeuse d'Applications</strong>, en alternance.
+          </p>
+          <p>
+            J'aime les projets qui associent réflexion technique, créativité et attention aux détails,
+            avec une même envie : concevoir des applications utiles, cohérentes et agréables à utiliser.
+          </p>
+        </div>
+
+        <div class="about__actions">
+          <!-- TODO: add the PDF in assets/cv/ before going live -->
+          <a class="btn-main" href="assets/cv/romina-arguello-cv.pdf" download>
+            Télécharger mon CV <span aria-hidden="true">↓</span>
+          </a>
+          <a class="link-arrow" href="https://github.com/Romina-Arguello" target="_blank" rel="noopener">
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+          <a class="link-arrow" href="https://www.linkedin.com/in/romina-arguello/" target="_blank" rel="noopener">
+            LinkedIn <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section class="section section--dark" id="competences" aria-labelledby="skills-title">
+
+      <header class="section-head">
+        <p class="kicker"><span class="kicker__number">02</span>Compétences</p>
+        <h2 id="skills-title">Une boîte à outils <br>au service des <em>idées.</em></h2>
+        <p class="section-head__intro">
+          Du front-end au back-end, les technologies que j'utilise au quotidien en projet.
+        </p>
+      </header>
+
+      <ol class="skills-list">
+        <li class="skill">
+          <span class="skill__number" aria-hidden="true">01</span>
+          <h3 class="skill__title">Front-end</h3>
+          <div class="skill__content">
+            <p class="skill__text">Interfaces responsives, accessibles et animées, intégrées à partir de maquettes.</p>
+            <ul class="tag-list" aria-label="Technologies front-end">
+              <li class="tag">HTML5</li>
+              <li class="tag">CSS3</li>
+              <li class="tag">JavaScript</li>
+              <li class="tag">Bootstrap</li>
+              <li class="tag">Twig</li>
+              <li class="tag">Fetch / JSON</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="skill">
+          <span class="skill__number" aria-hidden="true">02</span>
+          <h3 class="skill__title">Back-end</h3>
+          <div class="skill__content">
+            <p class="skill__text">Applications web en architecture MVC, authentification et back-office.</p>
+            <ul class="tag-list" aria-label="Technologies back-end">
+              <li class="tag">PHP</li>
+              <li class="tag">Symfony</li>
+              <li class="tag">Doctrine ORM</li>
+              <li class="tag">EasyAdmin</li>
+              <li class="tag">WordPress</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="skill">
+          <span class="skill__number" aria-hidden="true">03</span>
+          <h3 class="skill__title">Données</h3>
+          <div class="skill__content">
+            <p class="skill__text">Modélisation de bases relationnelles et requêtes optimisées.</p>
+            <ul class="tag-list" aria-label="Technologies de données">
+              <li class="tag">PostgreSQL</li>
+              <li class="tag">MySQL</li>
+              <li class="tag">SQL</li>
+              <li class="tag">UML</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="skill">
+          <span class="skill__number" aria-hidden="true">04</span>
+          <h3 class="skill__title">Outils &amp; méthodes</h3>
+          <div class="skill__content">
+            <p class="skill__text">Travail en équipe, versionnement et gestion de projet agile.</p>
+            <ul class="tag-list" aria-label="Outils et méthodes">
+              <li class="tag">Git</li>
+              <li class="tag">GitHub</li>
+              <li class="tag">GitLab</li>
+              <li class="tag">Figma</li>
+              <li class="tag">PhpStorm</li>
+              <li class="tag">Agile</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="skill">
+          <span class="skill__number" aria-hidden="true">05</span>
+          <h3 class="skill__title">Qualité</h3>
+          <div class="skill__content">
+            <p class="skill__text">Un code sécurisé, accessible et respectueux des données des utilisateurs.</p>
+            <ul class="tag-list" aria-label="Bonnes pratiques">
+              <li class="tag">Sécurité (CSRF, XSS)</li>
+              <li class="tag">Accessibilité</li>
+              <li class="tag">RGPD</li>
+              <li class="tag">SEO</li>
+              <li class="tag">Responsive</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+
+    </section>
 
     <!-- ==================== PROJECTS (step 3) ==================== -->
     <section class="section" id="projets" aria-label="Projets"></section>

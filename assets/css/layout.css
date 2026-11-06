@@ -1,5 +1,5 @@
 /* ==========================================================================
-   LAYOUT — header, sections, hero
+   LAYOUT — page frame: header, generic sections
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
@@ -161,116 +161,31 @@
   padding: var(--section-space) var(--gutter);
 }
 
-/* --------------------------------------------------------------------------
-   3. Hero — white, black text, centered content
-   -------------------------------------------------------------------------- */
-.hero {
-  position: relative;
-  min-height: 100svh;            /* svh: real visible height on mobile */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: calc(var(--header-height) + 3rem) var(--gutter) 9rem;
-  background-color: var(--color-white);
-  color: var(--color-black);
+/* Dark variant: black background, white text */
+.section--dark {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Centered section header: kicker + title + intro */
+.section-head {
+  max-width: 48rem;
+  margin: 0 auto 4.5rem;
   text-align: center;
 }
 
-.hero__inner {
-  max-width: 60rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;           /* centers the children horizontally */
-}
-
-.hero__title {
-  margin-bottom: 2rem;
-}
-
-.hero__lead {
-  max-width: 40rem;
-  margin-bottom: 2.75rem;
+.section-head__intro {
+  margin-top: 1.75rem;
   color: var(--color-muted-dark);
-  font-size: clamp(1rem, 1.4vw, 1.125rem);
+  font-size: 1.05rem;
 }
 
-.hero__lead strong {
-  color: var(--color-black);
-  font-weight: 700;
-}
-
-.hero__actions {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  align-items: center;
-  gap: 1.5rem 2.5rem;
-}
-
-/* Availability list with pink check marks */
-.availability {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: .75rem 2rem;
-  margin: 3.5rem 0 0;
-  padding: 1.25rem 0 0;
-  border-top: 1px solid var(--color-line-dark);
-  list-style: none;
-  font-size: .7rem;
-  font-weight: 700;
-  letter-spacing: .12em;
-  text-transform: uppercase;
-}
-
-.availability li::before {
-  content: "✓";
-  margin-right: .5rem;
+/* On black, pink text is readable: no highlighter band needed */
+.section--dark h2 em {
+  background-image: none;
   color: var(--color-pink);
-  font-weight: 900;
 }
 
-/* "Scroll" hint: centered at the bottom, with a vertical moving line */
-.scroll-hint {
-  position: absolute;
-  left: 50%;
-  bottom: 1.5rem;
-  transform: translateX(-50%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .75rem;
-  color: var(--color-muted-dark);
-  font-size: .62rem;
-  font-weight: 600;
-  letter-spacing: .25em;
-  text-transform: uppercase;
-}
-
-.scroll-hint__line {
-  position: relative;
-  width: 1px;
-  height: 48px;
-  overflow: hidden;
-  background-color: var(--color-line-dark);
-}
-
-.scroll-hint__line::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background-color: var(--color-black);
-  animation: scroll-line 2.2s var(--ease-out) infinite;
-}
-
-@keyframes scroll-line {
-  0%   { transform: translateY(-100%); }
-  100% { transform: translateY(100%); }
-}
-
-/* Hidden on small or short screens: not enough room */
-@media (max-width: 575.98px), (max-height: 800px) {
-  .scroll-hint {
-    display: none;
-  }
+.section--dark .section-head__intro {
+  color: var(--color-muted-light);
 }
