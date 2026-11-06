@@ -1,0 +1,14 @@
+# IDE / editors
+.idea/
+.vscode/
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Dependencies (if npm is used later)
+node_modules/
+
+# Screenshots saved by the Claude app
+Claude outputs/
