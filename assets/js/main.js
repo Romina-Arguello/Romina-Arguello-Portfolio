@@ -21,6 +21,12 @@ function initScrollTop() {
 
   button.addEventListener('click', () => {
     // Respect users who asked their system to reduce motion
+    // With smooth scroll active (animations.js), let Lenis do the scrolling
+    if (window.lenis) {
+      window.lenis.scrollTo(0);
+      return;
+    }
+
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
   });

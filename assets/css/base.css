@@ -99,6 +99,7 @@ h2 em {
   -webkit-box-decoration-break: clone;
   box-decoration-break: clone;      /* the band follows the text if it wraps */
   padding: 0 .1em;
+  white-space: nowrap;              /* "sur mesure." never breaks in the middle */
 }
 
 p {

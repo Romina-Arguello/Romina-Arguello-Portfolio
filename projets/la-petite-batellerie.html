@@ -50,6 +50,7 @@
   <link rel="stylesheet" href="../assets/css/layout.css">
   <link rel="stylesheet" href="../assets/css/components.css">
   <link rel="stylesheet" href="../assets/css/case-study.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
 </head>
 
 <body>
@@ -96,7 +97,7 @@
       </nav>
 
       <p class="kicker"><span class="kicker__number">01</span>Étude de cas · Stage</p>
-      <h1 id="case-title">La Petite <br><em>Batellerie.</em></h1>
+      <h1 id="case-title" data-title-anim="scatter">La Petite <br><em>Batellerie.</em></h1>
 
       <p class="case-hero__lead">
         La première boutique en ligne d'une marque française de vêtements nautiques pour hommes,
@@ -132,82 +133,90 @@
         width="1200" height="750">
     </figure>
 
-    <!-- ==================== 01. CONTEXT ==================== -->
-    <section class="case-section" aria-labelledby="context-title">
-      <div class="case-section__head">
-        <p class="case-section__number">01</p>
-        <h2 id="context-title">Le <em>contexte.</em></h2>
-      </div>
-      <div class="case-section__body">
-        <p>
-          Sans équipe informatique interne, la marque avait besoin d'une boutique capable de valoriser
-          son identité « élégance nautique », de présenter ses collections et d'offrir un parcours
-          d'achat simple et sécurisé.
-        </p>
-        <p>
-          Le dirigeant devait aussi pouvoir gérer lui-même les produits, les variantes (tailles,
-          couleurs), les stocks et les commandes, sans connaissances techniques particulières.
-          Chaque modèle existant en plusieurs tailles et coloris, la base de données repose sur un
-          système de <strong>variantes de produits</strong>, et le catalogue a été pensé pour évoluer
-          sans modifier le code.
-        </p>
-      </div>
-    </section>
+    <!-- Sections 01 to 03: horizontal scroll on desktop (see animations.js) -->
+    <div class="h-scroll">
+      <div class="h-scroll__track">
 
-    <!-- ==================== 02. DESIGN & MODELLING ==================== -->
-    <section class="case-section" aria-labelledby="design-title">
-      <div class="case-section__head">
-        <p class="case-section__number">02</p>
-        <h2 id="design-title">La <em>conception.</em></h2>
-      </div>
-      <div class="case-section__body">
-        <p>
-          J'ai commencé par l'arborescence, les wireframes et les maquettes desktop et mobile sur
-          <strong>Figma</strong>, en partant du format mobile. J'ai ensuite modélisé la base de données
-          avec la méthode <strong>Merise</strong> (MCD, MLD, MPD) et réalisé les diagrammes
-          <strong>UML</strong> : cas d'utilisation, classes, états-transitions et séquence.
-        </p>
-        <p>
-          Le projet a été organisé en <strong>huit sprints d'une semaine</strong>, selon une démarche
-          inspirée de Scrum, avec un suivi sur GitLab (jalons, tickets, merge requests) et un point
-          d'avancement chaque vendredi avec mon tuteur.
-        </p>
-      </div>
-      <figure class="case-figure">
-        <img src="../assets/img/projects/lpb/diagramme-classes.webp"
-          alt="Diagramme de classes UML : User, Address, Category, Product, ProductVariant, Order, OrderItem et leurs relations"
-          width="1340" height="1080" loading="lazy">
-        <figcaption>Diagramme de classes UML de l'application.</figcaption>
-      </figure>
-    </section>
+      <!-- ==================== 01. CONTEXT ==================== -->
+      <section class="case-section h-scroll__panel" aria-labelledby="context-title">
+        <div class="case-section__head">
+          <p class="case-section__number">01</p>
+          <h2 id="context-title" data-title-anim="wave">Le <em>contexte.</em></h2>
+        </div>
+        <div class="case-section__body">
+          <p>
+            Sans équipe informatique interne, la marque avait besoin d'une boutique capable de valoriser
+            son identité « élégance nautique », de présenter ses collections et d'offrir un parcours
+            d'achat simple et sécurisé.
+          </p>
+          <p>
+            Le dirigeant devait aussi pouvoir gérer lui-même les produits, les variantes (tailles,
+            couleurs), les stocks et les commandes, sans connaissances techniques particulières.
+            Chaque modèle existant en plusieurs tailles et coloris, la base de données repose sur un
+            système de <strong>variantes de produits</strong>, et le catalogue a été pensé pour évoluer
+            sans modifier le code.
+          </p>
+        </div>
+      </section>
 
-    <!-- ==================== 03. ARCHITECTURE ==================== -->
-    <section class="case-section" aria-labelledby="archi-title">
-      <div class="case-section__head">
-        <p class="case-section__number">03</p>
-        <h2 id="archi-title">L'<em>architecture.</em></h2>
+      <!-- ==================== 02. DESIGN & MODELLING ==================== -->
+      <section class="case-section h-scroll__panel" aria-labelledby="design-title">
+        <div class="case-section__head">
+          <p class="case-section__number">02</p>
+          <h2 id="design-title" data-title-anim="wave">La <em>conception.</em></h2>
+        </div>
+        <div class="case-section__body">
+          <p>
+            J'ai commencé par l'arborescence, les wireframes et les maquettes desktop et mobile sur
+            <strong>Figma</strong>, en partant du format mobile. J'ai ensuite modélisé la base de données
+            avec la méthode <strong>Merise</strong> (MCD, MLD, MPD) et réalisé les diagrammes
+            <strong>UML</strong> : cas d'utilisation, classes, états-transitions et séquence.
+          </p>
+          <p>
+            Le projet a été organisé en <strong>huit sprints d'une semaine</strong>, selon une démarche
+            inspirée de Scrum, avec un suivi sur GitLab (jalons, tickets, merge requests) et un point
+            d'avancement chaque vendredi avec mon tuteur.
+          </p>
+        </div>
+        <figure class="case-figure">
+          <img src="../assets/img/projects/lpb/diagramme-classes.webp"
+            alt="Diagramme de classes UML : User, Address, Category, Product, ProductVariant, Order, OrderItem et leurs relations"
+            width="1340" height="1080" loading="lazy">
+          <figcaption>Diagramme de classes UML de l'application.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ==================== 03. ARCHITECTURE ==================== -->
+      <section class="case-section h-scroll__panel" aria-labelledby="archi-title">
+        <div class="case-section__head">
+          <p class="case-section__number">03</p>
+          <h2 id="archi-title" data-title-anim="wave">L'<em>architecture.</em></h2>
+        </div>
+        <div class="case-section__body">
+          <p>
+            L'application suit le modèle <strong>MVC</strong> de Symfony avec une architecture en couches :
+            les contrôleurs restent légers et délèguent la logique métier à des <strong>services</strong>
+            (panier, tunnel de commande, création de commande, livraison). La création d'une commande
+            et la mise à jour du stock sont exécutées dans une même <strong>transaction</strong>.
+          </p>
+        </div>
+        <figure class="case-figure case-figure--wide">
+          <img src="../assets/img/projects/lpb/architecture.webp"
+            alt="Schéma d'architecture : poste client, serveur Symfony 7.4 (pare-feu, contrôleurs, services, Doctrine), base MySQL et services externes"
+            width="1600" height="758" loading="lazy">
+          <figcaption>Schéma d'architecture : du navigateur à la base de données.</figcaption>
+        </figure>
+      </section>
+
       </div>
-      <div class="case-section__body">
-        <p>
-          L'application suit le modèle <strong>MVC</strong> de Symfony avec une architecture en couches :
-          les contrôleurs restent légers et délèguent la logique métier à des <strong>services</strong>
-          (panier, tunnel de commande, création de commande, livraison). La création d'une commande
-          et la mise à jour du stock sont exécutées dans une même <strong>transaction</strong>.
-        </p>
-      </div>
-      <figure class="case-figure case-figure--wide">
-        <img src="../assets/img/projects/lpb/architecture.webp"
-          alt="Schéma d'architecture : poste client, serveur Symfony 7.4 (pare-feu, contrôleurs, services, Doctrine), base MySQL et services externes"
-          width="1600" height="758" loading="lazy">
-        <figcaption>Schéma d'architecture : du navigateur à la base de données.</figcaption>
-      </figure>
-    </section>
+      <div class="h-scroll__progress" aria-hidden="true"><span></span></div>
+    </div>
 
     <!-- ==================== 04. FEATURES ==================== -->
     <section class="case-section" aria-labelledby="features-title">
       <div class="case-section__head">
         <p class="case-section__number">04</p>
-        <h2 id="features-title">Les <em>fonctionnalités.</em></h2>
+        <h2 id="features-title" data-title-anim="wave">Les <em>fonctionnalités.</em></h2>
       </div>
       <div class="case-section__body case-section__body--columns">
         <div>
@@ -244,7 +253,7 @@
     <section class="case-section section--dark case-section--dark" aria-labelledby="security-title">
       <div class="case-section__head">
         <p class="case-section__number">05</p>
-        <h2 id="security-title">Sécurité &amp; <em>qualité.</em></h2>
+        <h2 id="security-title" data-title-anim="scramble">Sécurité &amp; <em>qualité.</em></h2>
       </div>
       <div class="case-section__body">
         <p>
@@ -270,7 +279,7 @@
     <section class="case-section" aria-labelledby="lessons-title">
       <div class="case-section__head">
         <p class="case-section__number">06</p>
-        <h2 id="lessons-title">Difficultés &amp; <em>apprentissages.</em></h2>
+        <h2 id="lessons-title" data-title-anim="wave">Difficultés &amp; <em>apprentissages.</em></h2>
       </div>
       <div class="case-section__body">
         <p>
@@ -291,7 +300,7 @@
     <section class="case-section" aria-labelledby="outcome-title">
       <div class="case-section__head">
         <p class="case-section__number">07</p>
-        <h2 id="outcome-title">Bilan &amp; <em>suite.</em></h2>
+        <h2 id="outcome-title" data-title-anim="scatter">Bilan &amp; <em>suite.</em></h2>
       </div>
       <div class="case-section__body">
         <p>
@@ -338,6 +347,14 @@
   <!-- Project JS -->
   <script src="../assets/js/nav.js" defer></script>
   <script src="../assets/js/main.js" defer></script>
+
+  <!-- Animations (self-hosted libraries: no request to a third-party server) -->
+  <script src="../assets/js/vendor/gsap.min.js" defer></script>
+  <script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../assets/js/vendor/SplitText.min.js" defer></script>
+  <script src="../assets/js/vendor/ScrambleTextPlugin.min.js" defer></script>
+  <script src="../assets/js/vendor/lenis.min.js" defer></script>
+  <script src="../assets/js/animations.js" defer></script>
 </body>
 
 </html>

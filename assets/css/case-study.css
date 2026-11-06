@@ -308,3 +308,82 @@
 .btn-main--light:focus-visible {
   color: var(--color-white);
 }
+
+/* --------------------------------------------------------------------------
+   6. Horizontal scroll (desktop, activated by animations.js)
+   Without the .is-horizontal class, the panels stay normal vertical sections.
+   -------------------------------------------------------------------------- */
+.h-scroll__progress {
+  display: none;
+}
+
+.h-scroll.is-horizontal {
+  position: relative;
+  overflow: hidden;
+  border-bottom: 1px solid var(--color-line-dark);
+}
+
+.h-scroll.is-horizontal .h-scroll__track {
+  display: flex;
+  width: max-content;                     /* as wide as all the panels side by side */
+  will-change: transform;                 /* tells the browser it will move: smoother */
+}
+
+.h-scroll.is-horizontal .h-scroll__panel {
+  flex: 0 0 100vw;                        /* each panel = full screen width */
+  max-width: none;
+  height: 100vh;
+  margin: 0;
+  padding: calc(var(--header-height) + 3rem) max(var(--gutter), calc((100vw - 72rem) / 2 + var(--gutter))) 4rem;
+  grid-template-columns: 1fr 1.25fr;
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "head   figure"
+    "body   figure";
+  align-content: center;
+  border-bottom: 0;
+  border-right: 1px solid var(--color-line-dark);
+}
+
+.h-scroll.is-horizontal .case-section__head { grid-area: head; }
+.h-scroll.is-horizontal .case-section__body { grid-area: body; }
+
+.h-scroll.is-horizontal .case-figure {
+  grid-area: figure;
+  align-self: center;
+  margin: 0;
+}
+
+/* The diagram must fit in the screen height */
+.h-scroll.is-horizontal .case-figure img {
+  max-height: calc(100vh - var(--header-height) - 14rem);
+  width: auto;
+  max-width: 100%;
+}
+
+/* Panel without image: the text uses the whole width */
+.h-scroll.is-horizontal .h-scroll__panel:not(:has(.case-figure)) {
+  grid-template-columns: 1fr 1.6fr;
+  grid-template-areas: "head body";
+  grid-template-rows: auto;
+  align-items: start;
+}
+
+/* Progress bar at the bottom of the pinned section */
+.h-scroll.is-horizontal .h-scroll__progress {
+  position: absolute;
+  left: var(--gutter);
+  right: var(--gutter);
+  bottom: 2rem;
+  display: block;
+  height: 2px;
+  background-color: var(--color-line-dark);
+}
+
+.h-scroll__progress span {
+  display: block;
+  height: 100%;
+  background-color: var(--color-pink);
+  transform: scaleX(0);
+  transform-origin: left;
+}

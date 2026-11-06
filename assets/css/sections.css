@@ -282,12 +282,12 @@
   width: 100%;
   height: auto;
   box-shadow: 0 30px 60px rgba(0, 0, 0, .35);
-  transform: rotate(-2deg);
+  transform: translateY(var(--parallax, 0px)) rotate(-2deg);   /* --parallax: see animations.js */
   transition: transform .8s var(--ease-out);
 }
 
 .project:hover .project__shot {
-  transform: rotate(0) scale(1.03);
+  transform: translateY(var(--parallax, 0px)) rotate(0) scale(1.03);
 }
 
 .project__visual--navy { background-color: #162e60; }   /* La Petite Batellerie brand color */
