@@ -255,9 +255,10 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  aspect-ratio: 4 / 3;
-  padding: 10%;
+  aspect-ratio: 3 / 2;           /* a bit less tall than before (4 / 3) */
+  padding: 8%;
   overflow: hidden;
+  background-color: #1c1c1c;     /* same dark grey for every project */
 }
 
 /* Screenshot: slightly tilted, straightens on hover */
@@ -272,10 +273,6 @@
 .project:hover .project__shot {
   transform: translateY(var(--parallax, 0px)) rotate(0) scale(1.03);
 }
-
-.project__visual--navy { background-color: #162e60; }   /* La Petite Batellerie brand color */
-.project__visual--pink { background-color: var(--color-pink); }
-.project__visual--dark { background-color: #1c1c1c; }
 
 /* Text side */
 .project__meta {
@@ -368,7 +365,6 @@
 .design__item {
   margin: 0;
   overflow: hidden;
-  border: 1px solid var(--color-line-light);
 }
 
 .design__item--wide {

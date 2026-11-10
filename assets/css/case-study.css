@@ -93,7 +93,7 @@
 .case-visual {
   margin: 0;
   padding: clamp(2rem, 7vw, 6rem) var(--gutter);
-  background-color: #162e60;              /* brand navy of La Petite Batellerie */
+  background-color: var(--color-black);
 }
 
 .case-visual img {
