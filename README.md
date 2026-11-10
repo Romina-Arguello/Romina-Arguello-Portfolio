@@ -10,6 +10,7 @@ Portfolio professionnel de **Romina Argüello**, développeuse web (titre Dével
 
 - **Page d'accueil** : présentation, compétences, projets, graphisme, parcours et contact.
 - **Étude de cas** : [La Petite Batellerie](projets/la-petite-batellerie.html), boutique e-commerce Symfony réalisée en stage (contexte, conception UML, architecture, sécurité, tests, bilan).
+- **CV** téléchargeable au format PDF.
 - **Mentions légales**.
 
 ## Stack technique
@@ -65,7 +66,11 @@ Aucune installation n'est nécessaire : ouvrir `index.html` avec un serveur loca
 ## Historique
 
 - `v1.0` : première version du portfolio (formation DWWM).
-- Branche `refonte-v2` : refonte complète (architecture, design, contenus, animations).
+- `v2.0` : refonte complète (architecture, design, contenus, animations), développée sur la branche `refonte-v2` puis fusionnée dans `main` par Pull Request.
+
+## Hébergement
+
+Le site est hébergé chez **DonWeb** ; la branche `main` correspond à la version en ligne.
 
 ## Outils utilisés
 
