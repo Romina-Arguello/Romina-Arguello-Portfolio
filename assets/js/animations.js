@@ -26,7 +26,7 @@
   // Elements revealed while scrolling (only those present on the page are used)
   const REVEAL_SELECTOR = [
     '.section-head .kicker', '.section-head__intro',
-    '.about__photo', '.about__lead', '.about__columns p', '.about__actions',
+    '.about__photo', '.about__columns p', '.about__actions',
     '.skill', '.project__visual', '.project__body',
     '.design__text p', '.design__item', '.timeline__item',
     '.contact__mail', '.contact__links', '.site-footer__top',

@@ -132,21 +132,6 @@
   background-color: var(--color-black);
 }
 
-/* Placeholder until the real photo is added */
-.about__photo--placeholder {
-  display: flex;
-  justify-content: center;       /* centers the initials horizontally */
-  align-items: center;           /* ...and vertically */
-  color: var(--color-white);
-  font-family: var(--font-heading);
-  font-size: 2rem;
-  font-weight: 900;
-}
-
-.about__photo--placeholder span {
-  color: var(--color-pink);
-}
-
 .about__photo img {
   width: 100%;
   height: 100%;
@@ -159,19 +144,18 @@
   text-align: center;
 }
 
-.about__lead {
-  margin-bottom: 2.5rem;
-  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
-  line-height: 1.6;
-}
-
+/* Text in 2 "newspaper" columns: it flows down the 1st column, then the 2nd */
 .about__columns {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 2.5rem;
+  columns: 2;                    /* number of columns, widths are balanced automatically */
+  column-gap: 2.5rem;
   text-align: left;
   color: var(--color-muted-dark);
   font-size: .95rem;
+}
+
+.about__columns p {
+  margin-bottom: 1.5rem;
+  break-inside: avoid;           /* a paragraph is never split between two columns */
 }
 
 .about__actions {
@@ -185,8 +169,7 @@
 
 @media (max-width: 767.98px) {
   .about__columns {
-    grid-template-columns: 1fr;  /* one column on small screens */
-    gap: 0;
+    columns: 1;                  /* one column on small screens */
     text-align: center;
   }
 }
