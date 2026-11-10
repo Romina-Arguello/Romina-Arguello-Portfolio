@@ -3,467 +3,511 @@
 
 <head>
   <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Romina Argüello - Portfolio Professionnel</title>
 
+  <!-- SEO -->
+  <title>Romina Argüello — Développeuse Web | PHP · Symfony · JavaScript</title>
   <meta name="description"
-    content="Descubre mi portafolio de diseño web, donde muestro mis proyectos y experiencia como diseñadora web. Explora mis trabajos y conoce más sobre mi estilo y habilidades." />
-  <meta name="keywords"
-    content="Front end design, html, JavaScript, css, Diseño web, Portafolio, Proyectos web, Portafolio de Diseño Web">
-  <meta name="author" content="Romina Arguello">
-  <!-- Favicons -->
-  <link rel="shortcut icon" href="assets/images/FaviconP (1).png" type="image/x-icon">
+    content="Portfolio de Romina Argüello, développeuse web à Aix-les-Bains : applications PHP/Symfony, interfaces responsives et accessibles. Disponible en alternance et en freelance.">
+  <link rel="canonical" href="https://romina-arguello.website/">
+  <meta name="author" content="Romina Argüello">
 
-  <!-- Main CSS File -->
-  <link rel="stylesheet" href="styles.css">
-  <link rel="stylesheet" href="responsive.css">
+  <!-- Open Graph: preview when the link is shared (LinkedIn, Slack...) -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Romina Argüello — Développeuse Web">
+  <meta property="og:description"
+    content="Applications PHP/Symfony, interfaces responsives et animées. Découvrez mes projets.">
+  <meta property="og:url" content="https://romina-arguello.website/">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://romina-arguello.website/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Romina Argüello, développeuse web">
+  <meta name="twitter:card" content="summary_large_image">
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link
-    href="https://fonts.googleapis.com/css2?family=Abril+Fatface&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap"
-    rel="stylesheet">
+  <!-- Favicon -->
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
-  <!-- Vendor CSS Files -->
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-    integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <!-- Fonts (self-hosted): the main title font is preloaded to appear sooner -->
+  <link rel="preload" href="assets/fonts/montserrat-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css">
 
+  <!-- Vendor CSS (self-hosted) -->
+  <link rel="stylesheet" href="assets/css/vendor/bootstrap.min.css">
+
+  <!-- Project CSS (order matters: general → specific) -->
+  <link rel="stylesheet" href="assets/css/base.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/sections.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
 </head>
 
-<body>
-  <header id="header" class="header d-flex sticky-top">
-    <nav class="navbar navbar-expand-lg w-100">
-      <div class="container-fluid d-flex justify-content-between align-items-center">
+<!-- Bootstrap ScrollSpy: highlights the nav link of the section currently on screen -->
+<body data-bs-spy="scroll" data-bs-target="#mainNav" data-bs-root-margin="0px 0px -40%">
 
-        <a class="navbar-brand ml-10 text-white" href="#home">PORTFOLIO.</a>
+  <!-- Accessibility: lets keyboard users skip the menu -->
+  <a class="skip-link" href="#main">Aller au contenu</a>
 
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-          aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header" id="siteHeader">
+    <nav class="site-nav navbar navbar-expand-lg" aria-label="Navigation principale">
 
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-          <ul class="navbar-nav mx-auto">
-            <li class="nav-item">
-              <a class="nav-link active text-white mx-4" aria-current="page" href="#home">HOME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white mx-4" href="#skills">COMPÉTENCES</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white mx-4" href="#portfolio">GRAPHISME</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white mx-4" href="#projets">PROJETS WEB</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-white mx-4" href="#contact">CONTACT</a>
-            </li>
-          </ul>
-        </div>
-        <!-- /.navbar-collapse -->
+      <a class="brand" href="#accueil">RA<span>.</span><span class="visually-hidden"> Romina Argüello, retour à l'accueil</span></a>
 
+      <button class="nav-toggle navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="#a-propos">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="#competences">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link" href="#projets">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="#parcours">Parcours</a></li>
+        </ul>
+        <a class="btn-nav" href="#contact">Me contacter</a>
       </div>
-      <!-- /.container-fluid -->
+
     </nav>
   </header>
 
-  <!-- Hero Section -->
-  <main class="main">
-    <section id="home" class="hero section py-5">
-      <div class="container mb-4" data-aos="fade-up" data-aos-delay="100">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-6">
-            <div class="hero-content" data-aos="fade-up" data-aos-delay="200">
+  <main id="main">
 
-              <h1 class="mb-3 mt-3" data-aos="fade-up" data-aos-delay="200">
-                BONJOUR ET BIENVENUE SUR MON SITE WEB.</h1>
-           
-              <div>
-                <p class="mb-4" data-aos="fade-up" data-aos-delay="200">Je m'appelle <b>Romina Argüello</b>, étudiante
-                  en Développement Web et Web Mobile à
-                  l'ENI École Informatique. </p>
-                <p class="mb-5">Ce site représente mon tout premier projet personnel entièrement conçu et développé par
-                  moi-même. À
-                  travers cette plateforme, je souhaite partager mon parcours, mes compétences, mes projets ainsi que
-                  mon
-                  évolution dans le domaine du développement Web et Web Mobile.
-                </p>
-              </div>
-            </div>
-            <div class="alert alert-dark alert-warning alert-dismissible fade show " role="alert">
-              Ce portfolio est avant tout un projet d'apprentissage et d'évolution.
-              Il est amené à évoluer régulièrement au fil de l'acquisition de nouvelles compétences.
-              <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
-            </div>
+    <!-- ==================== HERO ==================== -->
+    <section class="hero" id="accueil" aria-labelledby="hero-title">
+      <div class="hero__inner">
 
+        <p class="eyebrow"><span class="eyebrow__dot" aria-hidden="true"></span>Développeuse web full stack · Aix-les-Bains</p>
+
+        <h1 class="hero__title" id="hero-title" data-title-anim="fall">
+          <span lang="en">Hello world</span>&#8239;! <br>Je suis <em>Romina<span class="title-dot">.</span></em>
+        </h1>
+
+        <p class="hero__lead">
+          Formée au métier de <strong>Développeuse Web et Web Mobile</strong> à l'ENI, je conçois et
+          développe des sites et applications web, en associant sens du design, qualité technique et
+          expérience utilisateur. Du front-end au back-end, j'aime transformer les idées en expériences
+          web fonctionnelles, intuitives et accessibles.
+        </p>
+
+        <div class="hero__actions">
+          <a class="btn-main" href="#projets">Voir mes projets <span aria-hidden="true">→</span></a>
+          <a class="link-arrow" href="#contact">Me contacter <span aria-hidden="true">↘</span></a>
+        </div>
+
+        <ul class="availability" aria-label="Disponibilités">
+          <li>Alternance CDA (Bac+3)</li>
+          <li>Premier poste</li>
+          <li>Missions freelance</li>
+        </ul>
+
+      </div>
+
+      <a class="scroll-hint" href="#a-propos" aria-label="Scroll : aller à la section À propos">
+        <span>Scroll</span>
+        <span class="scroll-hint__line" aria-hidden="true"></span>
+      </a>
+    </section>
+
+    <!-- ==================== ABOUT ==================== -->
+    <section class="section about" id="a-propos" aria-labelledby="about-title">
+
+      <header class="section-head">
+        <p class="kicker"><span class="kicker__number">01</span>À propos</p>
+        <h2 id="about-title" data-title-anim="wave">De la curiosité <br>au <em>code<span class="title-dot">.</span></em></h2>
+      </header>
+
+      <figure class="about__photo">
+        <img src="assets/img/romina-arguello.webp" alt="Portrait de Romina Argüello"
+             width="480" height="480" loading="lazy" decoding="async">
+      </figure>
+
+      <div class="about__body">
+        <div class="about__columns">
+          <p>
+            Mon parcours dans le web a commencé par le <strong>design graphique</strong> et la création de
+            sites internet. D'abord attirée par l'aspect visuel, j'ai progressivement eu envie d'aller plus
+            loin : comprendre la logique derrière les interfaces, explorer le fonctionnement des applications
+            et apprendre à construire des solutions web complètes.
+          </p>
+          <p>
+            Lors de mon stage chez <strong>La Petite Batellerie</strong>, j'ai conçu et développé en
+            autonomie une boutique e-commerce avec Symfony : de la modélisation UML et la conception de
+            la base de données jusqu'au back-office et aux fonctionnalités métier.
+          </p>
+          <p>
+            Je souhaite approfondir mes compétences en développement et poursuivre mon
+            parcours vers le titre <strong>Conceptrice Développeuse d'Applications</strong>, en alternance.
+          </p>
+          <p>
+            J'aime les projets qui associent réflexion technique, créativité et attention aux détails,
+            avec une même envie : concevoir des applications utiles, cohérentes et agréables à utiliser.
+          </p>
+        </div>
+
+        <div class="about__actions">
+          <a class="btn-main" href="assets/cv/romina-arguello-cv.pdf" download>
+            Télécharger mon CV <span aria-hidden="true">↓</span>
+          </a>
+          <a class="link-arrow" href="https://github.com/Romina-Arguello" target="_blank" rel="noopener">
+            GitHub <span aria-hidden="true">↗</span>
+          </a>
+          <a class="link-arrow" href="https://www.linkedin.com/in/romina-arguello/" target="_blank" rel="noopener">
+            LinkedIn <span aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ==================== SKILLS ==================== -->
+    <section class="section section--dark" id="competences" aria-labelledby="skills-title">
+
+      <header class="section-head">
+        <p class="kicker"><span class="kicker__number">02</span>Compétences</p>
+        <h2 id="skills-title" data-title-anim="scramble">Une boîte à outils <br>au service des <em>idées<span class="title-dot">.</span></em></h2>
+        <p class="section-head__intro">
+          Du front-end au back-end, les technologies que j'utilise au quotidien en projet.
+        </p>
+      </header>
+
+      <ol class="skills-list">
+        <li class="skill">
+          <span class="skill__number" aria-hidden="true">01</span>
+          <h3 class="skill__title">Front-end</h3>
+          <div class="skill__content">
+            <p class="skill__text">Interfaces responsives, accessibles et animées, intégrées à partir de maquettes.</p>
+            <ul class="tag-list" aria-label="Technologies front-end">
+              <li class="tag">HTML5</li>
+              <li class="tag">CSS3</li>
+              <li class="tag">JavaScript</li>
+              <li class="tag">Bootstrap</li>
+              <li class="tag">Twig</li>
+              <li class="tag">Stimulus</li>
+              <li class="tag">Fetch / JSON</li>
+            </ul>
           </div>
+        </li>
+
+        <li class="skill">
+          <span class="skill__number" aria-hidden="true">02</span>
+          <h3 class="skill__title">Back-end</h3>
+          <div class="skill__content">
+            <p class="skill__text">Applications web en architecture MVC, authentification et back-office.</p>
+            <ul class="tag-list" aria-label="Technologies back-end">
+              <li class="tag">PHP</li>
+              <li class="tag">Symfony</li>
+              <li class="tag">Doctrine ORM</li>
+              <li class="tag">EasyAdmin</li>
+              <li class="tag">WordPress</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="skill">
+          <span class="skill__number" aria-hidden="true">03</span>
+          <h3 class="skill__title">Données</h3>
+          <div class="skill__content">
+            <p class="skill__text">Modélisation de bases relationnelles et requêtes optimisées.</p>
+            <ul class="tag-list" aria-label="Technologies de données">
+              <li class="tag">MySQL</li>
+              <li class="tag">SQL</li>
+              <li class="tag">UML</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="skill">
+          <span class="skill__number" aria-hidden="true">04</span>
+          <h3 class="skill__title">Outils &amp; méthodes</h3>
+          <div class="skill__content">
+            <p class="skill__text">Travail en équipe, versionnement et gestion de projet agile.</p>
+            <ul class="tag-list" aria-label="Outils et méthodes">
+              <li class="tag">Git</li>
+              <li class="tag">GitHub</li>
+              <li class="tag">GitLab</li>
+              <li class="tag">Figma</li>
+              <li class="tag">PhpStorm</li>
+              <li class="tag">Agile</li>
+            </ul>
+          </div>
+        </li>
+
+        <li class="skill">
+          <span class="skill__number" aria-hidden="true">05</span>
+          <h3 class="skill__title">Qualité</h3>
+          <div class="skill__content">
+            <p class="skill__text">Un code sécurisé, accessible et respectueux des données des utilisateurs.</p>
+            <ul class="tag-list" aria-label="Bonnes pratiques">
+              <li class="tag">Sécurité (CSRF, XSS)</li>
+              <li class="tag">Tests PHPUnit</li>
+              <li class="tag">Accessibilité</li>
+              <li class="tag">RGPD</li>
+              <li class="tag">SEO</li>
+              <li class="tag">Responsive</li>
+            </ul>
+          </div>
+        </li>
+      </ol>
+
+    </section>
+
+    <!-- ==================== PROJECTS ==================== -->
+    <section class="section projects" id="projets" aria-labelledby="projects-title">
+
+      <header class="section-head">
+        <p class="kicker"><span class="kicker__number">03</span>Projets</p>
+        <h2 id="projects-title" data-title-anim="scatter">Des projets pensés <br>pour être <em>utiles<span class="title-dot">.</span></em></h2>
+        <p class="section-head__intro">
+          Une sélection de projets réalisés en formation et en entreprise, seule ou en équipe.
+        </p>
+      </header>
+
+      <!-- Project 1 -->
+      <article class="project">
+        <div class="project__visual">
+          <img class="project__shot" src="assets/img/projects/la-petite-batellerie.webp"
+            alt="Page d'accueil de la boutique La Petite Batellerie" width="1200" height="750" loading="lazy">
+        </div>
+
+        <div class="project__body">
+          <p class="project__meta"><span>01</span>E-commerce · Stage · 8 semaines</p>
+          <h3 class="project__title">La Petite Batellerie</h3>
+          <p class="project__text">
+            Boutique en ligne d'une jeune marque française de vêtements au style nautique.
+            J'ai mené le projet en autonomie : modélisation UML, conception de la base de données,
+            développement du catalogue, de l'espace client et du back-office.
+          </p>
+          <ul class="tag-list" aria-label="Technologies utilisées">
+            <li class="tag">Symfony 7.4</li>
+            <li class="tag">PHP 8.4</li>
+            <li class="tag">Twig</li>
+            <li class="tag">Stimulus</li>
+            <li class="tag">Doctrine</li>
+            <li class="tag">MySQL</li>
+            <li class="tag">EasyAdmin</li>
+          </ul>
+          <div class="project__links">
+            <a class="link-arrow" href="projets/la-petite-batellerie.html">Voir l'étude de cas <span aria-hidden="true">→</span></a>
+            <span class="project__note">Code disponible sur demande</span>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 2 (reversed: visual on the right) -->
+      <article class="project project--reverse">
+        <div class="project__visual">
+          <img class="project__shot" src="assets/img/projects/promo-eni.webp"
+            alt="Page d'accueil du site ENI-Promo" width="1200" height="568" loading="lazy">
+        </div>
+
+        <div class="project__body">
+          <p class="project__meta"><span>02</span>Projet individuel · Formation</p>
+          <h3 class="project__title">Promo ENI</h3>
+          <p class="project__text">
+            Site présentant les apprenants de ma promotion. Les données sont chargées dynamiquement
+            depuis un fichier JSON avec <code>fetch</code>, les préférences d'affichage sont mémorisées
+            en <code>localStorage</code> et une carte interactive est réalisée avec Leaflet.
+          </p>
+          <ul class="tag-list" aria-label="Technologies utilisées">
+            <li class="tag">HTML5</li>
+            <li class="tag">CSS3</li>
+            <li class="tag">Bootstrap</li>
+            <li class="tag">JavaScript</li>
+            <li class="tag">Fetch / JSON</li>
+            <li class="tag">Leaflet</li>
+          </ul>
+          <div class="project__links">
+            <a class="link-arrow" href="https://github.com/Romina-Arguello/eni-promo" target="_blank" rel="noopener">
+              Voir le code <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <!-- Project 3 -->
+      <article class="project">
+        <div class="project__visual">
+          <img class="project__shot" src="assets/img/projects/sortir-com.webp"
+            alt="Page « Liste des sorties » de Sortir.com avec les filtres de recherche et le tableau des sorties" width="1200" height="568" loading="lazy">
+        </div>
+
+        <div class="project__body">
+          <p class="project__meta"><span>03</span>Projet d'équipe · 3 développeurs</p>
+          <h3 class="project__title">Sortir.com</h3>
+          <p class="project__text">
+            Application Symfony permettant aux étudiants d'un campus d'organiser des sorties et de s'y
+            inscrire. Mon rôle : la page d'accueil avec la recherche multicritère, l'inscription et le
+            désistement, puis le filtrage dynamique des lieux selon la ville (<code>fetch</code>, route API
+            et événements de formulaire).
+          </p>
+          <ul class="tag-list" aria-label="Technologies utilisées">
+            <li class="tag">Symfony</li>
+            <li class="tag">PHP</li>
+            <li class="tag">Doctrine</li>
+            <li class="tag">Twig</li>
+            <li class="tag">JavaScript</li>
+            <li class="tag">Bootstrap</li>
+          </ul>
+          <div class="project__links">
+            <a class="link-arrow" href="https://github.com/Romina-Arguello/sortir-com" target="_blank" rel="noopener">
+              Voir le code <span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <!-- ==================== GRAPHIC DESIGN ==================== -->
+    <section class="section section--dark design" id="graphisme" aria-labelledby="design-title">
+      <div class="design__grid">
+
+        <div class="design__text">
+          <p class="kicker"><span class="kicker__number">04</span>Graphisme</p>
+          <h2 id="design-title" data-title-anim="scatter">Avant le code, <br>le <em>design<span class="title-dot">.</span></em></h2>
+          <p>
+            J'ai réalisé l'identité visuelle d'<strong>Olimpia Showroom</strong>, une marque de vêtements :
+            logo, palette de couleurs, typographie et supports de communication.
+          </p>
+          <p>
+            Cette expérience m'a appris à penser la cohérence visuelle et la communication, une
+            sensibilité que j'applique aujourd'hui à mes interfaces web.
+          </p>
+        </div>
+
+        <div class="design__gallery">
+          <figure class="design__item design__item--wide">
+            <img src="assets/img/graphisme/olimpia-supports.webp"
+              alt="Supports de communication Olimpia : affiches New Drop, Black Friday et jeu concours"
+              width="500" height="310" loading="lazy">
+          </figure>
+          <figure class="design__item">
+            <img src="assets/img/graphisme/olimpia-logo.webp" alt="Logo Olimpia Showroom"
+              width="300" height="300" loading="lazy">
+          </figure>
+          <figure class="design__item">
+            <img src="assets/img/graphisme/olimpia-campagne.webp" alt="Visuel de campagne Olimpia, Volumen #1"
+              width="250" height="250" loading="lazy">
+          </figure>
         </div>
 
       </div>
     </section>
 
+    <!-- ==================== JOURNEY ==================== -->
+    <section class="section journey" id="parcours" aria-labelledby="journey-title">
 
-    <!-- Skills Section -->
-    <section id="skills" class="skills_section mt-5">
-      <div class="skills">
+      <header class="section-head">
+        <p class="kicker"><span class="kicker__number">05</span>Parcours</p>
+        <h2 id="journey-title" data-title-anim="wave">Apprendre, pratiquer, <br><em>évoluer<span class="title-dot">.</span></em></h2>
+      </header>
 
-        <!-- Section Title -->
-        <div class="container skills_title mb-5" data-aos="fade-up">
-          <h2> MON PARCOURS & MES COMPÉTENCES</h2>
+      <ol class="timeline">
+        <li class="timeline__item">
+          <p class="timeline__date">Les débuts</p>
+          <h3 class="timeline__title">Design graphique &amp; WordPress</h3>
+          <p>Création de visuels et d'identités graphiques, puis de sites sous WordPress et WooCommerce.</p>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__date">Depuis <time datetime="2026-05">mai 2026</time></p>
+          <h3 class="timeline__title">Développeuse Web et Web Mobile</h3>
+          <p>ENI École Informatique · Titre RNCP de niveau 5 (Bac+2)</p>
+        </li>
+        <li class="timeline__item">
+          <p class="timeline__date"><time datetime="2026-08-31">31 août</time> → <time datetime="2026-10-23">23 octobre 2026</time></p>
+          <h3 class="timeline__title">Stage · La Petite Batellerie</h3>
+          <p>Conception et développement, en autonomie, d'une boutique e-commerce avec Symfony.</p>
+        </li>
+        <li class="timeline__item timeline__item--next">
+          <p class="timeline__date">Prochaine étape</p>
+          <h3 class="timeline__title">Conceptrice Développeuse d'Applications</h3>
+          <p>Titre RNCP de niveau 6 (Bac+3) en alternance : je recherche une entreprise d'accueil.</p>
+        </li>
+      </ol>
 
-          <p>J'ai choisi de me reconvertir dans le Développement Web afin de transformer une
-            passion
-            en véritable métier. </p>
-        </div><!-- End Section Title -->
-        <div class="container mt-5">
-          <div class="row g-4">
-
-            <!-- Carte 1 -->
-            <div class="col-lg-4 col-md-6 d-flex" data-aos="flip-up" data-aos-delay="100">
-
-              <div class="skills_item w-100">
-
-                <div class="skills_content">
-
-                  <div class="skills_icon">
-                    <i class="bi bi-pc-display-horizontal"></i>
-                  </div>
-
-                  <h4>Développement Frontend</h4>
-
-                  <p>
-                   En formation continue dans le Développement Web, je développe progressivement mes compétences pour concevoir des interfaces modernes, responsives et accessibles.
-                  </p>
-
-                  <div class="skills_tags">
-                    <span class="tag">HTML5</span>
-                    <span class="tag">CSS3</span>
-
-                    <span class="tag">JavaScript</span>
-                    <span class="tag">Angular</span>
-
-                  </div>
-
-                </div>
-
-              </div>
-
-            </div>
-            <!-- Carte 2 -->
-            <div class="col-lg-4 col-md-6" data-aos="flip-up" data-aos-delay="200">
-              <div class="skills_item">
-                <div class="skills_content">
-                  <div class="skills_icon">
-                    <i class="bi bi-gear"></i>
-                  </div>
-
-                  <h4>Développement Back-End</h4>
-
-                  <p>
-                    J'apprends actuellement le développement Back-End avec Symfony en réalisant des projets intégrant
-                    une
-                    base de données relationnelle, des opérations CRUD, Doctrine ORM et l'architecture MVC.
-                  </p>
-
-                  <div class="skills_tags">
-                    <span class="tag">Symfony</span>
-                    <span class="tag">PHP</span>
-                    <span class="tag">SQL</span>
-                    <span class="tag">MySQL</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-
-            <!-- Carte 3 -->
-            <div class="col-lg-4 col-md-6" data-aos="flip-up" data-aos-delay="300">
-              <div class="skills_item">
-                <div class="skills_content">
-                  <div class="skills_icon">
-                    <i class="bi bi-tools"></i>
-                  </div>
-
-                  <h4>Outils de Développement</h4>
-
-                  <p>
-                    J'utilise Git quotidiennement pour le travail collaboratif, la gestion de versions et le suivi de
-                    projets.
-                  </p>
-
-                  <div class="skills_tags">
-                    <span class="tag">Git</span>
-                    <span class="tag">GitHub</span>
-                    <span class="tag">VS Code</span>
-                    <span class="tag">PhpStorm</span>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-
-          </div>
-        </div>
-
-      </div>
     </section>
 
-    <!-- Portfolio Details Section -->
-    <section id="portfolio" class="portfolio py-5">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-10">
-            <div class="competences-cont" data-aos="fade-up" data-aos-delay="200">
-              <h2 class="portfolio_title">GRAPHISME</h2>
-              <p class="mt-4">Cette section présente une sélection de travaux réalisés dans le domaine du design
-                graphique, discipline qui a marqué les premières étapes de mon parcours dans l'univers du numérique.</p>
-              <p>Bien que je me spécialise aujourd'hui dans le développement Web, le design graphique occupe une place
-                importante dans mon approche de la création numérique. Cette expérience m'a permis de développer un sens
-                de l'esthétique, de la communication visuelle et de l'expérience utilisateur que j'applique également à
-                mes projets web.</p>
-              <p>Cette galerie est dédiée à une sélection de créations graphiques personnelles, réalisées dans le cadre
-                de projets créatifs et d'exercices de conception visuelle.</p>
-            </div>
+    <!-- ==================== CONTACT ==================== -->
+    <section class="section section--dark contact" id="contact" aria-labelledby="contact-title">
 
-            <!-- GRAPHISME -->
-            <div class="row align-items-start mt-5">
+      <header class="section-head">
+        <p class="kicker"><span class="kicker__number">06</span>Contact</p>
+        <h2 id="contact-title" data-title-anim="scramble">Un projet, une alternance ? <br><em>Parlons-en<span class="title-dot">.</span></em></h2>
+        <p class="section-head__intro">
+          Je recherche une entreprise pour préparer le titre Conceptrice Développeuse d'Applications
+          en alternance, et je reste disponible pour des missions freelance.
+        </p>
+      </header>
 
-              <!-- Columna izquierda -->
-              <div class="col-lg-4 text-center">
-
-
-                <img src="assets/images/Olimpia_show.png" class="img-fluid mb-4 mt-5" alt="Logo Olimpia"
-                  style="max-width:300px;" data-aos="fade-right" data-aos-delay="300">
-
-                <h3 class="brand mt-4" data-aos="fade-right" data-aos-delay="300">Brand <br> Identity</h3>
-
-              </div>
-
-              <!-- Columna derecha -->
-              <div class="col-lg-6 ms-auto">
-
-
-
-                <img src="assets/images/BranId.png" class="img-fluid mt-5" alt="Identité visuelle Olimpia"
-                  data-aos="fade-left" data-aos-delay="300">
-
-                <p class="mt-5" data-aos="fade-left" data-aos-delay="300">
-                  J'ai développé l'identité visuelle <strong>D'OLIMPIA SHOWROOM</strong>,
-                  une marque de vêtements qui s'efforce de proposer des vêtements
-                  contemporains de haute qualité. Cette identité visuelle comprenait le
-                  logo, la palette de couleurs, la typographie et les éléments graphiques
-                  utilisés dans tous les supports marketing et de communication.
-                </p>
-
-              </div>
-
-            </div>
-          </div>
-        </div>
+      <div class="contact__mail">
+        <a class="contact__email" href="mailto:romina.arg.dev@gmail.com">romina.arg.dev@gmail.com</a>
+        <button class="contact__copy" type="button" data-copy="romina.arg.dev@gmail.com">
+          Copier l'adresse
+        </button>
+        <!-- Message read by screen readers when the address is copied -->
+        <p class="contact__status" role="status" aria-live="polite"></p>
       </div>
 
+      <ul class="contact__links">
+        <li><a class="link-arrow" href="https://www.linkedin.com/in/romina-arguello/" target="_blank" rel="noopener">LinkedIn <span aria-hidden="true">↗</span></a></li>
+        <li><a class="link-arrow" href="https://github.com/Romina-Arguello" target="_blank" rel="noopener">GitHub <span aria-hidden="true">↗</span></a></li>
+        <li><a class="link-arrow" href="assets/cv/romina-arguello-cv.pdf" download>Mon CV <span aria-hidden="true">↓</span></a></li>
+      </ul>
 
-    </section><!-- /Portfolio Details Section -->
-
-    <!-- Projets Web Section -->
-    <section id="projets" class="projets">
-      <div class="container mb-5" data-aos="fade-up" data-aos-delay="100">
-        <div class="row justify-content-center text-center">
-          <div class="col-lg-10">
-            <div class="competences-cont" data-aos="fade-up" data-aos-delay="200">
-              <h2>PROJETS WEB</h2>
-              <p class="mt-4">Voici une sélection de projets sur lesquels j'ai travaillé pendant ma formation, seule
-                ou en équipe, en appliquant les technologies Frontend et Backend que j'apprends au quotidien.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="row g-4">
-
-          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="200">
-            <div class="project_card w-100">
-              <div class="project_media">
-                <i class="bi bi-window"></i>
-              </div>
-              <div class="project_body">
-                <span class="project_badge">Projet personnel</span>
-                <h4>Portfolio Personnel</h4>
-                <p>
-                  Le site que vous êtes en train de consulter. Conçu et développé entièrement par moi-même en HTML,
-                  CSS, Bootstrap et JavaScript, ce projet m'a permis de mettre en pratique le responsive design et
-                  les animations et scroll.
-                </p>
-                <div class="project_tags">
-                  <span class="tag">HTML5</span>
-                  <span class="tag">CSS3</span>
-                  <span class="tag">Bootstrap</span>
-                  <span class="tag">JavaScript</span>
-                </div>
-                <div class="project_links">
-                  <a href="https://github.com/Romina-Arguello" class="project_link" target="_blank"><i
-                      class="bi bi-github"></i> Code</a>
-                  <a href="#home" class="project_link"><i class="bi bi-box-arrow-up-right"></i> Démo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="300">
-            <div class="project_card project_card-empty w-100">
-              <div class="project_media">
-                <i class="bi bi-mortarboard"></i>
-              </div>
-              <div class="project_body">
-                <span class="project_badge">En cours de mise à jour</span>
-                <h4>Premier projet <br>
-                  ENI-Promo</h4>
-                <p>
-                  Mon tout premier projet de formation: un site pour présenter ma promo, réalisé en HTML, CSS et
-                  JavaScript à partir de maquettes fournies. J'y ai manipulé le DOM, mis en place la vérification d'un
-                  formulaire et rendu les données dynamiques grâce à un fichier JSON. Ce projet a aussi été l'occasion
-                  d'apprendre les bases de Git en local et de faire mon premier push sur GitHub.
-                </p>
-                <div class="project_tags">
-                  <span class="tag">HTML5</span>
-                  <span class="tag">CSS3</span>
-                  <span class="tag">JavaScript</span>
-                  <span class="tag">GIT</span>
-                </div>
-                <div class="project_links">
-                  <a href="#cs" class="project_link"><i class="bi bi-github"></i> Code</a>
-                  <a href="#cs" class="project_link"><i class="bi bi-box-arrow-up-right"></i> Démo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <div class="col-lg-4 col-md-6 d-flex" data-aos="fade-up" data-aos-delay="100">
-            <div class="project_card w-100">
-              <div class="project_media">
-                <i class="bi bi-signpost-split"></i>
-              </div>
-              <div class="project_body">
-                <span class="project_badge">Projet d'équipe</span>
-
-                <h4>Sortir.com</h4>
-                <p>
-                  Application Symfony développée en équipe pour organiser et rechercher des sorties entre étudiants
-                  d'un campus.
-                </p>
-                <div class="project_tags">
-                  <span class="tag">Symfony</span>
-                  <span class="tag">PHP</span>
-                  <span class="tag">Doctrine ORM</span>
-                  <span class="tag">Bootstrap</span>
-                </div>
-                <div class="project_links">
-                  <a href="https://github.com/KentinPB/Sortir" class="project_link"><i class="bi bi-github"></i>
-                    Code</a>
-                  <a href="#cs" class="project_link"><i class="bi bi-box-arrow-up-right"></i> Démo</a>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section><!-- /Projets Web Section -->
-
-    <!-- Contact Section -->
-    <section id="contact" class="contact py-5">
-      <div class="container" data-aos="fade-up" data-aos-delay="100">
-        <div class="row justify-content-center text-center mb-5">
-          <div class="col-lg-8">
-            <h2 class="py-4">CONTACT</h2>
-            <p class="contact_lead">Je suis à la recherche de nouvelles opportunités pour développer mes compétences et contribuer à des projets concrets.</p>
-          </div>
-        </div>
-
-        <div class="row justify-content-center">
-          <div class="col-lg-8">
-            <div class="contact_card" data-aos="zoom-in" data-aos-delay="150">
-              <div class="contact_header">
-                <h3>Romina Argüello</h3>
-                <p>Étudiante en Développement Web &amp; Web Mobile</p>
-              </div>
-
-              <div class="contact_grid">
-                <a href="tel:+330753637819" class="contact_item">
-                  <span class="contact_icon"><i class="bi bi-phone-vibrate"></i></span>
-                  <span class="contact_text">
-                    <span class="contact_label">Téléphone</span>
-                    <span class="contact_value">(+33) 07 53 63 78 19</span>
-                  </span>
-                </a>
-
-                <a href="mailto:Romina.arg.dev@gmail.com" class="contact_item">
-                  <span class="contact_icon"><i class="bi bi-envelope-at"></i></span>
-                  <span class="contact_text">
-                    <span class="contact_label">Email</span>
-                    <span class="contact_value">Romina.arg.dev@gmail.com</span>
-                  </span>
-                </a>
-
-                <div class="contact_item">
-                  <span class="contact_icon"><i class="bi bi-geo-alt"></i></span>
-                  <span class="contact_text">
-                    <span class="contact_label">Localisation</span>
-                    <span class="contact_value">Aix-les-Bains, France</span>
-                  </span>
-                </div>
-
-                <a href="https://www.linkedin.com/in/romina-arguello/" target="_blank" class="contact_item">
-                  <span class="contact_icon"><i class="bi bi-linkedin"></i></span>
-                  <span class="contact_text">
-                    <span class="contact_label">LinkedIn</span>
-                    <span class="contact_value">romina-arguello</span>
-                  </span>
-                </a>
-              </div>
-
-              <div class="contact_footer">
-                <a href="mailto:Romina.arg.dev@gmail.com" class="btn btn-pink">
-                  <i class="bi bi-send me-2"></i>Envoyer un email
-                </a>
-                <a href="https://github.com/Romina-Arguello" target="_blank" class="btn btn-outline-pink">
-                  <i class="bi bi-github me-2"></i>Voir mon GitHub
-                </a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
   </main>
 
-  <footer id="footer" class="footer">
-    <div class="container">
-      <p class="mb-0">
-        © <span>Copyright</span>
-        <strong class="px-1 sitename">Romina Argüello</strong>
-        <span>All Rights Reserved</span>
-      </p>
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="site-footer__top">
+      <div>
+        <a class="brand" href="#accueil">RA<span>.</span></a>
+        <p class="site-footer__tagline">Développeuse web · Aix-les-Bains, Savoie</p>
+      </div>
+
+      <nav aria-label="Navigation du pied de page">
+        <ul class="site-footer__links">
+          <li><a href="#a-propos">À propos</a></li>
+          <li><a href="#competences">Compétences</a></li>
+          <li><a href="#projets">Projets</a></li>
+          <li><a href="#parcours">Parcours</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="site-footer__bottom">
+      <p>© <span data-current-year>2026</span> Romina Argüello · Conçu et développé par mes soins</p>
+      <a href="mentions-legales.html">Mentions légales</a>
     </div>
   </footer>
 
-  <!-- Scroll Top -->
-  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i
-      class="bi bi-arrow-up-short"></i></a>
+  <!-- Back to top button (shown by main.js after some scrolling) -->
+  <button class="scroll-top" type="button" aria-label="Revenir en haut de la page">
+    <span aria-hidden="true">↑</span>
+  </button>
 
-  <!-- Vendor JS Files -->
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script> AOS.init(); </script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
-  <!-- Main JS File -->
-  <script src="main.js" defer></script>
+  <!-- Vendor JS -->
+  <script src="assets/js/vendor/bootstrap.bundle.min.js"></script>
+
+  <!-- Project JS -->
+  <script src="assets/js/nav.js" defer></script>
+  <script src="assets/js/main.js" defer></script>
+
+  <!-- Animations (self-hosted libraries: no request to a third-party server) -->
+  <script src="assets/js/vendor/gsap.min.js" defer></script>
+  <script src="assets/js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="assets/js/vendor/SplitText.min.js" defer></script>
+  <script src="assets/js/vendor/ScrambleTextPlugin.min.js" defer></script>
+  <script src="assets/js/vendor/lenis.min.js" defer></script>
+  <script src="assets/js/animations.js" defer></script>
 </body>
 
 </html>

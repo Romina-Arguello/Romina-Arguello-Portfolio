@@ -1,0 +1,64 @@
+/* ==========================================================================
+   ANIMATIONS — styles needed by animations.js (Lenis, parallax, timeline)
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Lenis (smooth scroll) — rules recommended by the library
+   -------------------------------------------------------------------------- */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+/* Lenis handles smoothness itself: the native smooth scroll must be off */
+html.lenis {
+  scroll-behavior: auto;
+}
+
+.lenis:not(.lenis-autoToggle).lenis-stopped {
+  overflow: clip;
+}
+
+.lenis.lenis-smooth iframe {
+  pointer-events: none;
+}
+
+/* --------------------------------------------------------------------------
+   2. Project screenshots: parallax value written by animations.js
+   -------------------------------------------------------------------------- */
+.project__visual {
+  --parallax: 0px;
+}
+
+/* --------------------------------------------------------------------------
+   3. Journey timeline: pink line drawn while scrolling
+   -------------------------------------------------------------------------- */
+.timeline::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1px;
+  width: 1px;
+  height: 100%;
+  background-color: var(--color-pink);
+  transform: scaleY(var(--progress, 0));   /* 0 = invisible, 1 = full height */
+  transform-origin: top;
+}
+
+.timeline__item::before {
+  transition: background-color .4s var(--ease-out), border-color .4s var(--ease-out);
+}
+
+.timeline__item.is-active::before {
+  border-color: var(--color-pink);
+  background-color: var(--color-pink);
+}
+
+/* --------------------------------------------------------------------------
+   4. Animated titles: transforms only work on block / inline-block elements
+   -------------------------------------------------------------------------- */
+h1 em,
+h2 em,
+.title-dot {
+  display: inline-block;
+}

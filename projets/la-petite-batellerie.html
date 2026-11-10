@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- SEO -->
+  <title>La Petite Batellerie — Étude de cas | Romina Argüello, Développeuse Web</title>
+  <meta name="description"
+    content="Étude de cas : conception et développement en autonomie de la boutique e-commerce Symfony 7.4 de La Petite Batellerie, marque française de vêtements nautiques.">
+  <link rel="canonical" href="https://romina-arguello.website/projets/la-petite-batellerie.html">
+  <meta name="author" content="Romina Argüello">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="article">
+  <meta property="og:title" content="La Petite Batellerie — Étude de cas">
+  <meta property="og:description" content="Une boutique e-commerce Symfony conçue et développée en 8 semaines, en autonomie.">
+  <meta property="og:url" content="https://romina-arguello.website/projets/la-petite-batellerie.html">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:image" content="https://romina-arguello.website/assets/img/og-image.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Romina Argüello, développeuse web">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Structured data: lets Google display the breadcrumb in search results -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      { "@type": "ListItem", "position": 1, "name": "Accueil", "item": "https://romina-arguello.website/" },
+      { "@type": "ListItem", "position": 2, "name": "Projets", "item": "https://romina-arguello.website/#projets" },
+      { "@type": "ListItem", "position": 3, "name": "La Petite Batellerie" }
+    ]
+  }
+  </script>
+
+  <!-- Favicon (paths start with ../ : this page is one folder deeper) -->
+  <link rel="icon" href="../favicon.ico" sizes="48x48">
+  <link rel="icon" href="../assets/img/favicon.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="../assets/img/apple-touch-icon.png">
+
+  <!-- Fonts (self-hosted): the main title font is preloaded to appear sooner -->
+  <link rel="preload" href="../assets/fonts/montserrat-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="../assets/css/fonts.css">
+
+  <!-- Vendor CSS (self-hosted) -->
+  <link rel="stylesheet" href="../assets/css/vendor/bootstrap.min.css">
+
+  <!-- Project CSS: same base as the home page + styles specific to case studies -->
+  <link rel="stylesheet" href="../assets/css/base.css">
+  <link rel="stylesheet" href="../assets/css/layout.css">
+  <link rel="stylesheet" href="../assets/css/components.css">
+  <link rel="stylesheet" href="../assets/css/case-study.css">
+  <link rel="stylesheet" href="../assets/css/animations.css">
+</head>
+
+<body>
+
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <!-- ==================== HEADER ==================== -->
+  <header class="site-header" id="siteHeader">
+    <nav class="site-nav navbar navbar-expand-lg" aria-label="Navigation principale">
+
+      <a class="brand" href="../index.html">RA<span>.</span><span class="visually-hidden"> Romina Argüello, retour à l'accueil</span></a>
+
+      <button class="nav-toggle navbar-toggler collapsed" type="button" data-bs-toggle="collapse"
+        data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Ouvrir le menu">
+        <span class="nav-toggle__line"></span>
+        <span class="nav-toggle__line"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="mainNav">
+        <ul class="navbar-nav mx-auto">
+          <li class="nav-item"><a class="nav-link" href="../index.html#a-propos">À propos</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#competences">Compétences</a></li>
+          <li class="nav-item"><a class="nav-link active" aria-current="page" href="../index.html#projets">Projets</a></li>
+          <li class="nav-item"><a class="nav-link" href="../index.html#parcours">Parcours</a></li>
+        </ul>
+        <a class="btn-nav" href="../index.html#contact">Me contacter</a>
+      </div>
+
+    </nav>
+  </header>
+
+  <main id="main">
+
+    <!-- ==================== INTRO ==================== -->
+    <section class="case-hero" aria-labelledby="case-title">
+
+      <!-- Breadcrumb -->
+      <nav class="breadcrumb-nav" aria-label="Fil d'Ariane">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="../index.html">Accueil</a></li>
+          <li class="breadcrumb-item"><a href="../index.html#projets">Projets</a></li>
+          <li class="breadcrumb-item active" aria-current="page">La Petite Batellerie</li>
+        </ol>
+      </nav>
+
+      <p class="kicker"><span class="kicker__number">01</span>Étude de cas · Stage</p>
+      <h1 id="case-title" data-title-anim="scatter">La Petite <br><em>Batellerie<span class="title-dot">.</span></em></h1>
+
+      <p class="case-hero__lead">
+        La première boutique en ligne d'une marque française de vêtements nautiques pour hommes,
+        en phase de lancement. Un projet que j'ai conçu et développé seule, de l'analyse des
+        besoins jusqu'à une première version fonctionnelle.
+      </p>
+
+      <!-- Key facts: a description list (term / definition) -->
+      <dl class="facts">
+        <div class="facts__item">
+          <dt>Rôle</dt>
+          <dd>Développeuse web, seule sur la partie technique</dd>
+        </div>
+        <div class="facts__item">
+          <dt>Durée</dt>
+          <dd>8 semaines · <time datetime="2026-08-31">31/08</time> → <time datetime="2026-10-23">23/10/2026</time></dd>
+        </div>
+        <div class="facts__item">
+          <dt>Stack</dt>
+          <dd>Symfony 7.4 · PHP 8.4 · MySQL · Twig · Stimulus · EasyAdmin</dd>
+        </div>
+        <div class="facts__item">
+          <dt>Livrable</dt>
+          <dd>Version <code>v1.0-mvp</code> · code disponible sur demande</dd>
+        </div>
+      </dl>
+    </section>
+
+    <!-- Main visual -->
+    <figure class="case-visual">
+      <img src="../assets/img/projects/la-petite-batellerie.webp"
+        alt="Page d'accueil de La Petite Batellerie : grande photo de vagues et titre « L'élégance au fil de l'eau »"
+        width="1200" height="750">
+    </figure>
+
+    <!-- Sections 01 to 03: horizontal scroll on desktop (see animations.js) -->
+    <div class="h-scroll">
+      <div class="h-scroll__track">
+
+      <!-- ==================== 01. CONTEXT ==================== -->
+      <section class="case-section h-scroll__panel" aria-labelledby="context-title">
+        <div class="case-section__head">
+          <p class="case-section__number">01</p>
+          <h2 id="context-title" data-title-anim="wave">Le <em>contexte<span class="title-dot">.</span></em></h2>
+        </div>
+        <div class="case-section__body">
+          <p>
+            Sans équipe informatique interne, la marque avait besoin d'une boutique capable de valoriser
+            son identité « élégance nautique », de présenter ses collections et d'offrir un parcours
+            d'achat simple et sécurisé.
+          </p>
+          <p>
+            Le dirigeant devait aussi pouvoir gérer lui-même les produits, les variantes (tailles,
+            couleurs), les stocks et les commandes, sans connaissances techniques particulières.
+            Chaque modèle existant en plusieurs tailles et coloris, la base de données repose sur un
+            système de <strong>variantes de produits</strong>, et le catalogue a été pensé pour évoluer
+            sans modifier le code.
+          </p>
+        </div>
+      </section>
+
+      <!-- ==================== 02. DESIGN & MODELLING ==================== -->
+      <section class="case-section h-scroll__panel" aria-labelledby="design-title">
+        <div class="case-section__head">
+          <p class="case-section__number">02</p>
+          <h2 id="design-title" data-title-anim="wave">La <em>conception<span class="title-dot">.</span></em></h2>
+        </div>
+        <div class="case-section__body">
+          <p>
+            J'ai commencé par l'arborescence, les wireframes et les maquettes desktop et mobile sur
+            <strong>Figma</strong>, en partant du format mobile. J'ai ensuite modélisé la base de données
+            avec la méthode <strong>Merise</strong> (MCD, MLD, MPD) et réalisé les diagrammes
+            <strong>UML</strong> : cas d'utilisation, classes, états-transitions et séquence.
+          </p>
+          <p>
+            Le projet a été organisé en <strong>huit sprints d'une semaine</strong>, selon une démarche
+            inspirée de Scrum, avec un suivi sur GitLab (jalons, tickets, merge requests) et un point
+            d'avancement chaque vendredi avec mon tuteur.
+          </p>
+        </div>
+        <figure class="case-figure">
+          <img src="../assets/img/projects/lpb/diagramme-classes.webp"
+            alt="Diagramme de classes UML : User, Address, Category, Product, ProductVariant, Order, OrderItem et leurs relations"
+            width="1340" height="1080" loading="lazy">
+          <figcaption>Diagramme de classes UML de l'application.</figcaption>
+        </figure>
+      </section>
+
+      <!-- ==================== 03. ARCHITECTURE ==================== -->
+      <section class="case-section h-scroll__panel" aria-labelledby="archi-title">
+        <div class="case-section__head">
+          <p class="case-section__number">03</p>
+          <h2 id="archi-title" data-title-anim="wave">L'<em>architecture<span class="title-dot">.</span></em></h2>
+        </div>
+        <div class="case-section__body">
+          <p>
+            L'application suit le modèle <strong>MVC</strong> de Symfony avec une architecture en couches :
+            les contrôleurs restent légers et délèguent la logique métier à des <strong>services</strong>
+            (panier, tunnel de commande, création de commande, livraison). La création d'une commande
+            et la mise à jour du stock sont exécutées dans une même <strong>transaction</strong>.
+          </p>
+        </div>
+        <figure class="case-figure case-figure--wide">
+          <img src="../assets/img/projects/lpb/architecture.webp"
+            alt="Schéma d'architecture : poste client, serveur Symfony 7.4 (pare-feu, contrôleurs, services, Doctrine), base MySQL et services externes"
+            width="1600" height="758" loading="lazy">
+          <figcaption>Schéma d'architecture : du navigateur à la base de données.</figcaption>
+        </figure>
+      </section>
+
+      </div>
+      <div class="h-scroll__progress" aria-hidden="true"><span></span></div>
+    </div>
+
+    <!-- ==================== 04. FEATURES ==================== -->
+    <section class="case-section" aria-labelledby="features-title">
+      <div class="case-section__head">
+        <p class="case-section__number">04</p>
+        <h2 id="features-title" data-title-anim="wave">Les <em>fonctionnalités<span class="title-dot">.</span></em></h2>
+      </div>
+      <div class="case-section__body case-section__body--columns">
+        <div>
+          <h3>Côté client</h3>
+          <ul class="check-list">
+            <li>Catalogue avec recherche, filtres et tri</li>
+            <li>Fiches produits avec choix de la taille et de la couleur</li>
+            <li>Panier dynamique (contrôleurs Stimulus)</li>
+            <li>Tunnel de commande avec paiement simulé</li>
+            <li>Commande sans compte, après vérification de l'adresse e-mail</li>
+            <li>Autocomplétion des adresses via l'API de la Géoplateforme</li>
+            <li>Espace client et historique des commandes</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Côté administration</h3>
+          <ul class="check-list">
+            <li>Back-office EasyAdmin avec tableau de bord</li>
+            <li>Gestion des produits, variantes et stocks</li>
+            <li>Gestion des commandes et des utilisateurs</li>
+            <li>Images des produits stockées hors de la base de données</li>
+          </ul>
+        </div>
+      </div>
+      <figure class="case-figure case-figure--phone">
+        <img src="../assets/img/projects/lpb/inscription-mobile.webp"
+          alt="Formulaire d'inscription « Rejoindre la marque » affiché sur un écran de smartphone"
+          width="390" height="844" loading="lazy">
+        <figcaption>Formulaire d'inscription, version mobile.</figcaption>
+      </figure>
+    </section>
+
+    <!-- ==================== 05. SECURITY & QUALITY ==================== -->
+    <section class="case-section section--dark case-section--dark" aria-labelledby="security-title">
+      <div class="case-section__head">
+        <p class="case-section__number">05</p>
+        <h2 id="security-title" data-title-anim="scramble">Sécurité &amp; <em>qualité<span class="title-dot">.</span></em></h2>
+      </div>
+      <div class="case-section__body">
+        <p>
+          Hachage des mots de passe, hiérarchie des rôles (client, administrateur, super administrateur),
+          protection <strong>CSRF</strong>, <strong>Voters</strong> Symfony pour contrôler l'accès aux
+          données personnelles et limitation des tentatives de connexion (<code>login_throttling</code>).
+        </p>
+        <p>
+          Ma veille m'a aussi permis de trouver et corriger des failles dans mon propre code, par exemple
+          une page de confirmation de commande accessible à toute personne connaissant sa référence
+          (<strong>IDOR</strong>), ou une case des CGV contrôlée uniquement côté navigateur.
+        </p>
+      </div>
+
+      <ul class="stats" aria-label="Chiffres clés des tests">
+        <li class="stats__item"><span class="stats__number">118</span><span class="stats__label">tests automatisés PHPUnit</span></li>
+        <li class="stats__item"><span class="stats__number">44/44</span><span class="stats__label">cas du cahier de recette conformes</span></li>
+        <li class="stats__item"><span class="stats__number">3</span><span class="stats__label">formats d'écran testés : mobile, tablette, desktop</span></li>
+      </ul>
+    </section>
+
+    <!-- ==================== 06. LESSONS ==================== -->
+    <section class="case-section" aria-labelledby="lessons-title">
+      <div class="case-section__head">
+        <p class="case-section__number">06</p>
+        <h2 id="lessons-title" data-title-anim="wave">Difficultés &amp; <em>apprentissages<span class="title-dot">.</span></em></h2>
+      </div>
+      <div class="case-section__body">
+        <p>
+          En cours de développement, j'ai découvert que mes tables MySQL utilisaient le moteur
+          <strong>MyISAM</strong>, qui ne gère ni les transactions ni les clés étrangères. J'ai corrigé
+          la configuration pour passer à <strong>InnoDB</strong>. J'en retiens qu'il ne suffit pas de
+          savoir utiliser un outil : il faut vérifier qu'il est bien configuré avant de construire dessus.
+        </p>
+        <p>
+          J'ai aussi dû découper et réorganiser une feuille de style de près de 2 000 lignes. Avec le
+          recul, je définirais l'organisation du CSS dès le départ et j'écrirais les tests au fur et à
+          mesure du développement.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== 07. OUTCOME ==================== -->
+    <section class="case-section" aria-labelledby="outcome-title">
+      <div class="case-section__head">
+        <p class="case-section__number">07</p>
+        <h2 id="outcome-title" data-title-anim="scatter">Bilan &amp; <em>suite<span class="title-dot">.</span></em></h2>
+      </div>
+      <div class="case-section__body">
+        <p>
+          Le MVP a été livré dans le délai prévu, sous le tag <code>v1.0-mvp</code>. Il intègre même
+          plusieurs fonctionnalités prévues au départ comme des évolutions : recherche et tri du
+          catalogue, historique des commandes, commande en invité, autocomplétion des adresses et
+          tableau de bord d'administration.
+        </p>
+        <p>
+          Les prochaines étapes envisagées avec l'entreprise : l'intégration d'un paiement en ligne
+          réel et des services de transport.
+        </p>
+      </div>
+    </section>
+
+    <!-- ==================== CTA ==================== -->
+    <section class="case-cta section--dark" aria-label="Contact">
+      <p class="case-cta__text">Le code de ce projet est disponible sur demande.</p>
+      <div class="case-cta__actions">
+        <a class="btn-main btn-main--light" href="../index.html#contact">Me contacter <span aria-hidden="true">→</span></a>
+        <a class="link-arrow" href="../index.html#projets"><span aria-hidden="true">←</span> Retour aux projets</a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ==================== FOOTER ==================== -->
+  <footer class="site-footer">
+    <div class="site-footer__bottom">
+      <p>© <span data-current-year>2026</span> Romina Argüello</p>
+      <a href="../mentions-legales.html">Mentions légales</a>
+    </div>
+  </footer>
+
+  <button class="scroll-top" type="button" aria-label="Revenir en haut de la page">
+    <span aria-hidden="true">↑</span>
+  </button>
+
+  <!-- Vendor JS -->
+  <script src="../assets/js/vendor/bootstrap.bundle.min.js"></script>
+
+  <!-- Project JS -->
+  <script src="../assets/js/nav.js" defer></script>
+  <script src="../assets/js/main.js" defer></script>
+
+  <!-- Animations (self-hosted libraries: no request to a third-party server) -->
+  <script src="../assets/js/vendor/gsap.min.js" defer></script>
+  <script src="../assets/js/vendor/ScrollTrigger.min.js" defer></script>
+  <script src="../assets/js/vendor/SplitText.min.js" defer></script>
+  <script src="../assets/js/vendor/ScrambleTextPlugin.min.js" defer></script>
+  <script src="../assets/js/vendor/lenis.min.js" defer></script>
+  <script src="../assets/js/animations.js" defer></script>
+</body>
+
+</html>

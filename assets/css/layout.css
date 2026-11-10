@@ -1,0 +1,344 @@
+/* ==========================================================================
+   LAYOUT — page frame: header, generic sections
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Header & navigation
+   -------------------------------------------------------------------------- */
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1030;
+  background-color: var(--color-black);
+  transition: background-color var(--duration) ease;
+}
+
+/* Added by nav.js once the page is scrolled */
+.site-header.is-scrolled {
+  background-color: rgba(11, 11, 11, .8);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+}
+
+.site-nav {
+  min-height: var(--header-height);
+  padding: 0 var(--gutter);
+}
+
+/* Logo "RA." */
+.brand {
+  font-family: var(--font-heading);
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: var(--color-white);
+  letter-spacing: .02em;
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.brand span {
+  color: var(--color-pink);
+}
+
+.brand:hover {
+  color: var(--color-white);
+  transform: scale(1.05);
+}
+
+/* Links */
+.site-nav .nav-link {
+  position: relative;
+  margin: 0 1.25rem;
+  padding: .5rem 0;
+  color: var(--color-white);
+  font-size: .8rem;
+  font-weight: 700;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.site-nav .nav-link:hover,
+.site-nav .nav-link:focus,
+.site-nav .nav-link.active {
+  color: var(--color-white);
+}
+
+/* Animated underline: enters from the left, leaves to the right */
+.site-nav .nav-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: .2rem;
+  width: 100%;
+  height: 1px;
+  background-color: var(--color-white);
+  transform: scaleX(0);
+  transform-origin: right;
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.site-nav .nav-link:hover::after,
+.site-nav .nav-link.active::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+/* Burger button: 2 lines that turn into an X */
+.nav-toggle {
+  position: relative;
+  width: 44px;
+  height: 44px;
+  padding: 0;
+  border: 0;
+}
+
+.nav-toggle:focus {
+  box-shadow: none;              /* removes Bootstrap's blue halo */
+}
+
+.nav-toggle:focus-visible {
+  outline: 2px solid var(--color-pink);
+}
+
+.nav-toggle__line {
+  position: absolute;
+  left: 10px;
+  width: 24px;
+  height: 2px;
+  background-color: var(--color-white);
+  transition: transform var(--duration) var(--ease-out);
+}
+
+.nav-toggle__line:nth-child(1) { top: 17px; }
+.nav-toggle__line:nth-child(2) { top: 25px; }
+
+/* Bootstrap removes the .collapsed class when the menu is open */
+.nav-toggle:not(.collapsed) .nav-toggle__line:nth-child(1) {
+  transform: translateY(4px) rotate(45deg);
+}
+
+.nav-toggle:not(.collapsed) .nav-toggle__line:nth-child(2) {
+  transform: translateY(-4px) rotate(-45deg);
+}
+
+/* Mobile menu (< 992px) */
+@media (max-width: 991.98px) {
+  .site-nav .navbar-collapse {
+    padding: 1.5rem 0 2.5rem;
+  }
+
+  .site-nav .nav-link {
+    margin: 0;
+    padding: 1rem 0;
+    font-size: 1.35rem;
+    font-weight: 900;
+    letter-spacing: .02em;
+    border-bottom: 1px solid var(--color-line-light);
+    transition: color var(--duration) var(--ease-out), padding-left var(--duration) var(--ease-out);
+  }
+
+  /* Mobile: the link shifts right and turns pink instead of being underlined */
+  .site-nav .nav-link::after {
+    display: none;
+  }
+
+  .site-nav .nav-link:hover,
+  .site-nav .nav-link.active {
+    padding-left: .75rem;
+    color: var(--color-pink);
+  }
+
+  .btn-nav {
+    margin-top: 2rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   2. Sections
+   -------------------------------------------------------------------------- */
+.section {
+  padding: var(--section-space) var(--gutter);
+}
+
+/* Dark variant: black background, white text */
+.section--dark {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+
+/* Centered section header: kicker + title + intro */
+.section-head {
+  max-width: 48rem;
+  margin: 0 auto 4.5rem;
+  text-align: center;
+}
+
+.section-head__intro {
+  margin-top: 1.75rem;
+  color: var(--color-muted-dark);
+  font-size: 1.05rem;
+}
+
+/* On black: the highlighted word becomes a pink serif italic
+   (pink on black is readable: contrast > 7:1) */
+.section--dark h1 em,
+.section--dark h2 em {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  text-transform: none;
+  color: var(--color-pink);
+}
+
+.section--dark .section-head__intro {
+  color: var(--color-muted-light);
+}
+
+/* --------------------------------------------------------------------------
+   3. Footer
+   -------------------------------------------------------------------------- */
+.site-footer {
+  padding: 4rem var(--gutter) 2rem;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  border-top: 1px solid var(--color-line-light);
+}
+
+.site-footer__top {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;   /* brand on the left, links on the right */
+  align-items: flex-start;
+  gap: 2rem;
+  padding-bottom: 3rem;
+}
+
+.site-footer__tagline {
+  margin: .75rem 0 0;
+  color: var(--color-muted-light);
+  font-size: .85rem;
+}
+
+.site-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .75rem 2rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  font-size: .78rem;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.site-footer a:not(.brand) {
+  color: var(--color-muted-light);
+  transition: color var(--duration) var(--ease-out);
+}
+
+.site-footer a:not(.brand):hover,
+.site-footer a:not(.brand):focus-visible {
+  color: var(--color-white);
+}
+
+.site-footer__bottom {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 1rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--color-line-light);
+  color: var(--color-muted-light);
+  font-size: .75rem;
+}
+
+.site-footer__bottom p {
+  margin: 0;
+}
+
+/* Leaves room for the back to top button (bottom right) */
+.site-footer__bottom {
+  padding-right: 4.5rem;
+}
+
+/* Short footer (secondary pages): no top line, less space */
+.site-footer:has(> .site-footer__bottom:only-child) {
+  padding-top: 2rem;
+}
+
+.site-footer__bottom:only-child {
+  padding-top: 0;
+  border-top: 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Back to top button
+   -------------------------------------------------------------------------- */
+.scroll-top {
+  position: fixed;
+  right: 1.5rem;
+  bottom: calc(1.5rem + env(safe-area-inset-bottom, 0px));  /* iPhone home bar */
+  z-index: 1020;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--color-white);
+  border-radius: 50%;
+  background-color: var(--color-black);
+  color: var(--color-white);
+  font-size: 1.1rem;
+  /* Hidden by default: invisible, not clickable, slightly lower */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(1rem);
+  transition: opacity var(--duration) var(--ease-out),
+              visibility var(--duration) var(--ease-out),
+              transform var(--duration) var(--ease-out),
+              background-color var(--duration) var(--ease-out),
+              color var(--duration) var(--ease-out);
+}
+
+/* Added by main.js */
+.scroll-top.is-visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* Hover: black and white inverted (no pink!) */
+.scroll-top:hover,
+.scroll-top:focus-visible {
+  border-color: var(--color-black);
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+
+/* --------------------------------------------------------------------------
+   5. Simple text pages (legal notice)
+   -------------------------------------------------------------------------- */
+.legal {
+  max-width: 48rem;
+  margin: 0 auto;
+  padding: calc(var(--header-height) + 4rem) var(--gutter) var(--section-space);
+}
+
+.legal h1 {
+  margin-bottom: 3rem;
+  font-size: clamp(1.9rem, 4vw, 2.75rem);
+}
+
+.legal h2 {
+  margin: 2.75rem 0 1rem;
+  font-size: 1.1rem;
+  letter-spacing: .06em;
+}
+
+.legal p {
+  color: var(--color-muted-dark);
+}
+
+.legal a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
