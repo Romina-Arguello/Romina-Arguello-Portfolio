@@ -1,0 +1,15 @@
+# ==========================================================================
+# Apache configuration for romina-arguello.website
+# ==========================================================================
+
+# 1. Force HTTPS: every http:// request is permanently redirected (301)
+#    to the same address in https://
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !https
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# 2. Hide hidden files and folders (.git, .gitignore, .gitattributes...)
+#    -> 404 "not found". Exception: /.well-known/, used to validate
+#    the SSL certificate (Let's Encrypt).
+RedirectMatch 404 /\.(?!well-known)
