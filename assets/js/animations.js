@@ -46,25 +46,6 @@
      ====================================================================== */
 
   /**
-   * Wraps the final "." of the highlighted word in a <span>, so it can fall on its own.
-   * <em>code.</em>  ->  <em>code<span class="title-dot">.</span></em>
-   * @param {HTMLElement} title
-   */
-  function prepareTitleDot(title) {
-    const em = title.querySelector('em');
-    if (!em || em.querySelector('.title-dot')) return;   // nothing to do, or already done
-
-    const lastNode = em.lastChild;
-    if (lastNode && lastNode.nodeType === Node.TEXT_NODE && lastNode.textContent.trimEnd().endsWith('.')) {
-      lastNode.textContent = lastNode.textContent.trimEnd().slice(0, -1);   // removes the "."
-      const dot = document.createElement('span');
-      dot.className = 'title-dot';
-      dot.textContent = '.';
-      em.append(dot);
-    }
-  }
-
-  /**
    * The 4 letter animations. Chosen in the HTML with data-title-anim="...".
    * Each function adds its tweens to the timeline it receives.
    */
@@ -184,8 +165,6 @@
    * @param {object} triggerOptions extra ScrollTrigger options (e.g. containerAnimation)
    */
   function revealTitle(title, triggerOptions = {}) {
-    prepareTitleDot(title);
-
     SplitText.create(title, {
       type: getSplitType(title),   // words (+ letters): no break in the middle of a word
       ignore: 'em',           // the highlighted word is animated as one block
@@ -258,8 +237,6 @@
     if (!hero) return;
 
     const title = hero.querySelector('.hero__title');
-    prepareTitleDot(title);
-
     SplitText.create(title, {
       type: getSplitType(title),
       ignore: 'em',

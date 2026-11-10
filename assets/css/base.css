@@ -85,20 +85,20 @@ h1 { font-size: clamp(2rem, 4vw, 3.25rem); }
 h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); }
 h3 { font-size: clamp(1.15rem, 1.8vw, 1.5rem); }
 
-/* Highlighted words in titles: <em>sur mesure.</em>
-   Serif italic, lowercase, with a pink "highlighter" band behind.
-   (Pink text on white would not be readable enough: contrast < 3:1) */
+/* Highlighted word in titles: <em>code<span class="title-dot">.</span></em>
+   On a WHITE background, the word looks like the rest of the title
+   (same font, same black color): only the final dot is pink, like the "RA." logo.
+   The dark sections have their own style (see layout.css). */
 h1 em,
 h2 em {
-  font-family: var(--font-accent);
-  font-style: italic;
-  font-weight: 500;
-  text-transform: none;
-  background-image: linear-gradient(transparent 60%, var(--color-pink) 60%, var(--color-pink) 92%, transparent 92%);
-  -webkit-box-decoration-break: clone;
-  box-decoration-break: clone;      /* the band follows the text if it wraps */
-  padding: 0 .1em;
-  white-space: nowrap;              /* "sur mesure." never breaks in the middle */
+  font-style: normal;               /* <em> is italic by default in browsers */
+  white-space: nowrap;              /* the word never breaks in the middle */
+}
+
+/* Pink final dot: it stays readable on white because it is decorative
+   (the text itself remains black → contrast OK) */
+.title-dot {
+  color: var(--color-pink);
 }
 
 p {

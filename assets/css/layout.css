@@ -180,9 +180,14 @@
   font-size: 1.05rem;
 }
 
-/* On black, pink text is readable: no highlighter band needed */
+/* On black: the highlighted word becomes a pink serif italic
+   (pink on black is readable: contrast > 7:1) */
+.section--dark h1 em,
 .section--dark h2 em {
-  background-image: none;
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-weight: 500;
+  text-transform: none;
   color: var(--color-pink);
 }
 
