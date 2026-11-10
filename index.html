@@ -26,7 +26,9 @@
   <meta name="twitter:card" content="summary_large_image">
 
   <!-- Favicon -->
-  <link rel="icon" href="assets/img/favicon.png" type="image/png">
+  <link rel="icon" href="favicon.ico" sizes="48x48">
+  <link rel="icon" href="assets/img/favicon.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
 
   <!-- Fonts (self-hosted): the main title font is preloaded to appear sooner -->
   <link rel="preload" href="assets/fonts/montserrat-latin-900-normal.woff2" as="font" type="font/woff2" crossorigin>
@@ -118,10 +120,10 @@
         <h2 id="about-title" data-title-anim="wave">De la curiosité <br>au <em>code.</em></h2>
       </header>
 
-      <!-- Photo placeholder: replace the <div> below with
-           <figure class="about__photo"><img src="assets/img/romina-arguello.webp"
-           alt="Portrait de Romina Argüello" width="280" height="280"></figure> -->
-      <div class="about__photo about__photo--placeholder" aria-hidden="true">RA<span>.</span></div>
+      <figure class="about__photo">
+        <img src="assets/img/romina-arguello.webp" alt="Portrait de Romina Argüello"
+             width="480" height="480" loading="lazy" decoding="async">
+      </figure>
 
       <div class="about__body">
         <p class="about__lead">
