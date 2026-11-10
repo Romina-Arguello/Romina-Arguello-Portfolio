@@ -23,7 +23,7 @@
   /* Layout */
   --header-height: 80px;
   --gutter: clamp(1.25rem, 5vw, 4.5rem);          /* side spacing */
-  --section-space: clamp(5rem, 10vw, 9rem);       /* vertical spacing */
+  --section-space: clamp(4rem, 8vw, 7rem);        /* vertical spacing */
 
   /* Motion */
   --ease-out: cubic-bezier(.22, 1, .36, 1);
@@ -81,9 +81,9 @@ h3 {
   text-transform: uppercase;
 }
 
-h1 { font-size: clamp(2.1rem, 5vw, 4.25rem); }
-h2 { font-size: clamp(1.9rem, 4.5vw, 3.75rem); }
-h3 { font-size: clamp(1.25rem, 2.2vw, 1.75rem); }
+h1 { font-size: clamp(2rem, 4vw, 3.25rem); }
+h2 { font-size: clamp(1.75rem, 3.5vw, 2.75rem); }
+h3 { font-size: clamp(1.15rem, 1.8vw, 1.5rem); }
 
 /* Highlighted words in titles: <em>sur mesure.</em>
    Serif italic, lowercase, with a pink "highlighter" band behind.

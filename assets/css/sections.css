@@ -161,7 +161,7 @@
 
 .about__lead {
   margin-bottom: 2.5rem;
-  font-size: clamp(1.1rem, 1.8vw, 1.35rem);
+  font-size: clamp(1.05rem, 1.5vw, 1.2rem);
   line-height: 1.6;
 }
 
@@ -317,7 +317,7 @@
 
 .project__title {
   margin-bottom: 1.25rem;
-  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  font-size: clamp(1.5rem, 2.5vw, 2rem);
 }
 
 .project__text {
@@ -369,7 +369,7 @@
 
 .design__text h2 {
   margin-bottom: 2rem;
-  font-size: clamp(1.9rem, 3.6vw, 3rem);
+  font-size: clamp(1.75rem, 3vw, 2.5rem);
 }
 
 .design__text p:not(.kicker) {
